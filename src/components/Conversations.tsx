@@ -41,35 +41,35 @@ export default class Conversations extends React.Component {
             </div>
             <div className="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
           </a>
-          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight">
+          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight text-muted">
             <div className="d-flex w-100 align-items-center justify-content-between">
               <strong className="mb-1">Liam Handler</strong>
               <small className="text-muted">Mon</small>
             </div>
             <div className="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
           </a>
-          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight">
+          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight text-muted">
             <div className="d-flex w-100 align-items-center justify-content-between">
               <strong className="mb-1">ART 101</strong>
               <small className="text-muted">Mon</small>
             </div>
             <div className="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
           </a>
-          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight text-muted">
             <div className="d-flex w-100 align-items-center justify-content-between">
               <strong className="mb-1">INST 314 ESG-1</strong>
               <small className="text-muted">Wed</small>
             </div>
             <div className="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
           </a>
-          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight">
+          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight text-muted">
             <div className="d-flex w-100 align-items-center justify-content-between">
               <strong className="mb-1">INST 377 </strong>
               <small className="text-muted">Tues</small>
             </div>
             <div className="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
           </a>
-          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight">
+          <a href="#" className="list-group-item list-group-item-action py-3 lh-tight text-muted">
             <div className="d-flex w-100 align-items-center justify-content-between">
               <strong className="mb-1">ENGL 393 WB11</strong>
               <small className="text-muted">Mon</small>
