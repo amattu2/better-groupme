@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
     };
 
     return (
-      <div className="d-flex flex-column flex-shrink-0 bg-white" style={styles}>
+      <div className="d-flex flex-column flex-shrink-0 bg-white border-end" style={styles}>
         <a href="/" className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
           <span className="fs-5 fw-semibold">&nbsp;</span>
         </a>
