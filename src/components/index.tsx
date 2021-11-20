@@ -1,7 +1,7 @@
-import Navigation from "./Navigation";
-import Footer from "./Footer";
+import Conversations from "./Conversations";
+import Sidebar from "./Sidebar";
 
 export default {
-  Navigation,
-  Footer,
+  Conversations,
+  Sidebar,
 };
