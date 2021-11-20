@@ -6,9 +6,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {Components.Navigation()}
+        <Components.Navigation />
         <h2>Body contents</h2>
-        {Components.Footer()}
+        <Components.Footer />
       </div>
     );
   }
