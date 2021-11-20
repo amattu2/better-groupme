@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Navigation() {
-  return (
-    <nav>
-      <p>Navbar</p>
-    </nav>
-  );
+export default class Navigation extends React.Component {
+  render() {
+    return (
+      <nav>
+        <p>Navbar</p>
+      </nav>
+    );
+  }
 }
-
-export default Navigation;
