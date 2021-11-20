@@ -4,11 +4,8 @@ N/A
 # Usage
 N/A
 
-# Notes
-N/A
-
 # Requirements & Dependencies
-N/A
+- [GroupMe API](https://dev.groupme.com/)
 
 # Previews
-![preview image](https://via.placeholder.com/350x240)
+TBD
