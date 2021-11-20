@@ -1,10 +1,17 @@
 import React from 'react';
-import { BsFillChatRightTextFill, BsPeople , BsFillArchiveFill, BsGrid } from "react-icons/bs";
+import { BsFillChatRightTextFill, BsPeopleFill , BsFillArchiveFill, BsGridFill } from "react-icons/bs";
 
 export default class Footer extends React.Component {
   render() {
+    const styles = {
+      zIndex: 999,
+    };
+
     return (
-      <div className="d-flex flex-column flex-shrink-0 bg-light">
+      <div className="d-flex flex-column flex-shrink-0 bg-white" style={styles}>
+        <a href="/" className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+          <span className="fs-5 fw-semibold">&nbsp;</span>
+        </a>
         <ul className="nav nav-pills nav-flush flex-column mb-auto text-center">
           <li className="nav-item">
             <a href="#" className="nav-link py-3 border-bottom" aria-current="page">
@@ -12,8 +19,8 @@ export default class Footer extends React.Component {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link active py-3 border-bottom">
-              <BsPeople />
+            <a href="#" className="nav-link py-3 border-bottom">
+              <BsPeopleFill />
             </a>
           </li>
           <li className="nav-item">
@@ -22,15 +29,10 @@ export default class Footer extends React.Component {
             </a>
           </li>
         </ul>
-        <div className="dropdown border-top">
-          <a href="#" className="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle">
-            <BsGrid />
+        <div className="border-top">
+          <a href="#" className="d-flex align-items-center justify-content-center p-3 text-decoration-none">
+            <BsGridFill />
           </a>
-          <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-            <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="#">Profile</a></li>
-            <li><a className="dropdown-item" href="#">Sign out</a></li>
-          </ul>
         </div>
       </div>
     )
