@@ -11,7 +11,7 @@ export default class Conversations extends React.Component {
     };
 
     return (
-      <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white shadow" style={styles}>
+      <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white border-end" style={styles}>
         <ConversationListHeader />
         <FilterTabs />
         <ConversationList />
