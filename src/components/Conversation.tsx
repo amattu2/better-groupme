@@ -19,52 +19,27 @@ export default class Conversation extends React.Component {
             <ul className="m-b-0">
               <li className="clearfix">
                   <div className="message-data text-end">
-                      <span className="message-data-time">10:10 AM, Today</span>
-                      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+                    <span className="message-data-time">November 21st, 2021 at 10:22am</span>
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
                   </div>
                   <div className="message other-message float-end"> Hi Aiden, how are you? How is the project coming along? </div>
               </li>
               <li className="clearfix">
                   <div className="message-data">
-                      <span className="message-data-time">10:12 AM, Today</span>
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+                    <span className="message-data-time">November 21st, 2021 at 10:26am</span>
                   </div>
-                  <div className="message my-message">Are we meeting today?</div>
-              </li>
-              <li className="clearfix">
-                  <div className="message-data">
-                      <span className="message-data-time">10:15 AM, Today</span>
-                  </div>
-                  <div className="message my-message">Project has been already finished and I have results to show you.</div>
-              </li>
-              <li className="clearfix">
-                  <div className="message-data text-end">
-                      <span className="message-data-time">10:10 AM, Today</span>
-                      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
-                  </div>
-                  <div className="message other-message float-end"> Hi Aiden, how are you? How is the project coming along? </div>
-              </li>
-              <li className="clearfix">
-                  <div className="message-data">
-                      <span className="message-data-time">10:15 AM, Today</span>
-                  </div>
-                  <div className="message my-message">Project has been already finished and I have results to show you.</div>
-              </li>
-              <li className="clearfix">
-                  <div className="message-data text-end">
-                      <span className="message-data-time">10:10 AM, Today</span>
-                      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
-                  </div>
-                  <div className="message other-message float-end"> Hi Aiden, how are you? How is the project coming along? </div>
+                  <div className="message my-message float-start">Are we meeting today?</div>
               </li>
               <Alert variant="secondary" className="text-center">
                 November 21st, 2021
               </Alert>
               <li className="clearfix">
-                  <div className="message-data text-end">
-                      <span className="message-data-time">10:10 AM, Today</span>
-                      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+                  <div className="message-data">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+                    <span className="message-data-time">10:15 AM, Today</span>
                   </div>
-                  <div className="message other-message float-end"> Hi Aiden, how are you? How is the project coming along? </div>
+                  <div className="message my-message float-start">Project has been already finished and I have results to show you.</div>
               </li>
             </ul>
           </div>
