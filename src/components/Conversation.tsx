@@ -1,5 +1,5 @@
 import React from 'react';
-import { CloseButton, InputGroup, FormControl, ButtonGroup, Button, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Alert, CloseButton, InputGroup, FormControl, ButtonGroup, Button, Dropdown, DropdownButton } from 'react-bootstrap';
 import "../chat.css";
 
 export default class Conversation extends React.Component {
@@ -12,6 +12,10 @@ export default class Conversation extends React.Component {
             <CloseButton className="ms-auto" />
           </a>
           <div className="overflow-auto chat-history p-3">
+            <Alert variant="warning" dismissible>
+              <Alert.Heading>Reminder</Alert.Heading>
+              <p>This is a public access group, anyone can join with the invite link. Any message you send is visible to past and present group members, and once sent, messages cannot be reliably deleted.</p>
+            </Alert>
             <ul className="m-b-0">
               <li className="clearfix">
                   <div className="message-data text-end">
@@ -52,6 +56,9 @@ export default class Conversation extends React.Component {
                   </div>
                   <div className="message other-message float-end"> Hi Aiden, how are you? How is the project coming along? </div>
               </li>
+              <Alert variant="secondary" className="text-center">
+                November 21st, 2021
+              </Alert>
               <li className="clearfix">
                   <div className="message-data text-end">
                       <span className="message-data-time">10:10 AM, Today</span>
