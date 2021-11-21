@@ -71,9 +71,8 @@ export default class Conversation extends React.Component {
             </InputGroup>
             <div className="align-items-center d-flex justify-content-center">
               <ButtonGroup className="ms-1">
-                <Button variant="secondary">Left</Button>
-                <Button variant="secondary">Right</Button>
-                <DropdownButton as={ButtonGroup} title="Dropdown">
+                <Button variant="dark">Send</Button>
+                <DropdownButton as={ButtonGroup} title="Attach" variant="dark">
                   <Dropdown.Item eventKey="1">Upload</Dropdown.Item>
                   <Dropdown.Item eventKey="2">Link</Dropdown.Item>
                 </DropdownButton>
