@@ -66,16 +66,19 @@ export default class Conversation extends React.Component {
               <FormControl
                 as="textarea"
                 placeholder="Enter your message"
+                rows={1}
               />
             </InputGroup>
-            <ButtonGroup className="ms-1">
-              <Button variant="secondary">Left</Button>
-              <Button variant="secondary">Right</Button>
-              <DropdownButton as={ButtonGroup} title="Dropdown">
-                <Dropdown.Item eventKey="1">Upload</Dropdown.Item>
-                <Dropdown.Item eventKey="2">Link</Dropdown.Item>
-              </DropdownButton>
-            </ButtonGroup>
+            <div className="align-items-center d-flex justify-content-center">
+              <ButtonGroup className="ms-1">
+                <Button variant="secondary">Left</Button>
+                <Button variant="secondary">Right</Button>
+                <DropdownButton as={ButtonGroup} title="Dropdown">
+                  <Dropdown.Item eventKey="1">Upload</Dropdown.Item>
+                  <Dropdown.Item eventKey="2">Link</Dropdown.Item>
+                </DropdownButton>
+              </ButtonGroup>
+            </div>
           </div>
         </div>
       </>
