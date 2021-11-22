@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
-import { BsFillChatRightTextFill, BsPeopleFill , BsFillArchiveFill, BsGridFill, BsFillCloudHaze2Fill } from "react-icons/bs";
+import { BsFillChatRightTextFill, BsPeopleFill , BsFillArchiveFill, BsGridFill, AiFillRobot } from "react-icons/bs";
 
 export default class SideNavigation extends React.Component {
   render() {
@@ -14,17 +14,17 @@ export default class SideNavigation extends React.Component {
           <span className="fs-5 fw-semibold">&nbsp;</span>
         </a>
         <Nav variant="pills" className="nav-flush flex-column mb-auto text-center" style={styles}>
-          <Nav.Link className="border-bottom py-3">
+          <Nav.Link active className="border-bottom">
             <BsFillChatRightTextFill />
           </Nav.Link>
-          <Nav.Link className="border-bottom py-3">
+          <Nav.Link className="border-bottom" title="Contacts">
             <BsPeopleFill />
           </Nav.Link>
-          <Nav.Link className="border-bottom py-3">
+          <Nav.Link className="border-bottom" title="Group Archive">
             <BsFillArchiveFill />
           </Nav.Link>
-          <Nav.Link className="border-bottom py-3">
-            <BsFillCloudHaze2Fill />
+          <Nav.Link className="border-bottom" title="My Bots">
+            <AiFillRobot />
           </Nav.Link>
         </Nav>
         <div className="border-top">
