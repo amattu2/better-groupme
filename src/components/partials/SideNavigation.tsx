@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
-import { BsFillChatRightTextFill, BsPeopleFill , BsFillArchiveFill, BsGridFill, AiFillRobot } from "react-icons/bs";
+import { BsFillChatRightTextFill, BsPeopleFill , BsFillArchiveFill, BsGridFill } from "react-icons/bs";
+import { AiFillRobot } from "react-icons/ai";
 
 export default class SideNavigation extends React.Component {
   render() {
