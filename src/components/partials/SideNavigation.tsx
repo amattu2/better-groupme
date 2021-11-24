@@ -35,7 +35,7 @@ export default class SideNavigation extends React.Component {
           </Nav.Link>
         </Nav>
         <div className="border-top">
-          <a href="#" className="d-flex align-items-center justify-content-center p-3 text-decoration-none">
+          <a href="/" className="d-flex align-items-center justify-content-center p-3 text-decoration-none">
             <BsGridFill />
           </a>
         </div>
