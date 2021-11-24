@@ -1,9 +1,13 @@
+// Imports
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import ConversationListHeader from './ConversationListHeader';
 import FilterTabs from './FilterTabs';
 import ConversationList from './ConversationList';
 
+/**
+ * Error boundary for Conversation List
+ */
 class ErrorBoundary extends React.Component<any, any> {
   constructor(props : {}) {
     super(props);
@@ -29,11 +33,26 @@ class ErrorBoundary extends React.Component<any, any> {
   }
 }
 
+/**
+ * Combines the sidebar component
+ */
 export default class Conversations extends React.Component<any, any> {
+  /**
+   * Class constructor
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:49:39-050
+   */
   constructor(props : object) {
     super(props);
   }
 
+  /**
+   * Render component
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   render() {
     return (
       <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white border-end" style={{width: "350px", zIndex: 998}}>

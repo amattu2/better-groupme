@@ -21,7 +21,7 @@ if (params.get("access_token")) {
 /**
  * GroupMe Access Token Cookie
  *
- * @type {String?}
+ * @type {String}
  */
 const accessToken : string = (document.cookie.match(/^(?:.*;)?\s*access_token\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1] || "";
 if (!accessToken) {

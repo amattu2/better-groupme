@@ -1,11 +1,27 @@
+// Imports
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 
+/*
+ * A conversation sidebar list item
+ */
 export default class ConversationListItem extends React.Component<any, any> {
+  /**
+   * Class constructor
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   constructor(props : object) {
     super(props);
   }
 
+  /**
+   * Render component
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:41:25-050
+   */
   render() {
     return (
       <ListGroup.Item action className="py-3 lh-tight">

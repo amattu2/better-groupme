@@ -1,18 +1,31 @@
-/// <reference types="react-scripts" />
-
 // Imports
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import ConversationListItem from './ConversationListItem';
 
+/*
+ * Generates a list of conversation items
+ */
 export default class ConversationList extends React.Component<any, any> {
+  /**
+   * Class constructor
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   constructor(props : object) {
     super(props);
-    this.state = { data: [] };
+    this.state = {data: []};
   }
 
+  /**
+   * Fetch Group and Individual chats
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   async componentDidMount() {
-    // Messages
+    // Variables
     let messages : Array<MessageListMessage> = [];
 
     // Fetch Groups Data
@@ -47,6 +60,12 @@ export default class ConversationList extends React.Component<any, any> {
     });
   }
 
+  /**
+   * Render component
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   render() {
     return (
       <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>

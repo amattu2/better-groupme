@@ -1,6 +1,10 @@
+// Imports
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 
+/**
+ * Conversation list filter pills
+ */
 export default class FilterTabs extends React.Component {
   render() {
     return (

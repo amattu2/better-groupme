@@ -1,13 +1,29 @@
+// Imports
 import React from 'react';
 import { Alert, CloseButton, InputGroup, FormControl, ButtonGroup, Button, Dropdown, DropdownButton, Card, Form } from 'react-bootstrap';
 import { BsFileBarGraphFill } from "react-icons/bs";
 import "../chat.css";
 
-export default class Conversation  extends React.Component<any, any> {
+/**
+ * Conversation container
+ */
+export default class Conversation extends React.Component<any, any> {
+  /**
+   * Class constructor
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   constructor(props : object) {
     super(props);
   }
 
+  /**
+   * Render component
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   render() {
     return (
       <>

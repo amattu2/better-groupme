@@ -1,9 +1,19 @@
+// Imports
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { BsFillChatRightTextFill, BsPeopleFill , BsFillArchiveFill, BsGridFill } from "react-icons/bs";
 import { AiFillRobot } from "react-icons/ai";
 
+/**
+ * Sidebar navigation container
+ */
 export default class SideNavigation extends React.Component {
+  /**
+   * Render component
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T14:40:56-050
+   */
   render() {
     return (
       <div className="d-flex flex-column flex-shrink-0 bg-white border-end" style={{zIndex: 999}}>
@@ -30,6 +40,6 @@ export default class SideNavigation extends React.Component {
           </a>
         </div>
       </div>
-    )
+    );
   }
 }
