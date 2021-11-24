@@ -21,7 +21,7 @@ export default class SideNavigation extends React.Component {
           <span className="fs-5 fw-semibold">&nbsp;</span>
         </a>
         <Nav variant="pills" className="nav-flush flex-column mb-auto text-center">
-          <Nav.Link active className="border-bottom">
+          <Nav.Link active className="border-bottom" style={{borderRadius: 0}}>
             <BsFillChatRightTextFill />
           </Nav.Link>
           <Nav.Link className="border-bottom" title="Contacts">
