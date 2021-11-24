@@ -69,8 +69,9 @@ export default class ConversationList extends React.Component<any, any> {
   render() {
     return (
       <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>
-        {(this.state.data || []).map((chatItem : MessageListMessage) => (
+        {(this.state.data || []).map((chatItem : MessageListMessage, index : number) => (
           <ConversationListItem
+            key={index}
             isGroup={chatItem.isGroup}
             name={chatItem.name}
             message_date={chatItem.message_date}
