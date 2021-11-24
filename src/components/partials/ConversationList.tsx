@@ -34,6 +34,7 @@ export default class ConversationList extends React.Component<any, any> {
     (groupsJson.response || []).forEach((group : any) => {
       messages.push({
         isGroup: true,
+        id: group.id,
         name: group.name,
         message_date: new Date(group.messages.last_message_created_at * 1000),
         message: group.messages.preview.text,
@@ -47,6 +48,7 @@ export default class ConversationList extends React.Component<any, any> {
     (chatsJson.response || []).forEach((chat : any) => {
       messages.push({
         isGroup: false,
+        id: chat.other_user.id,
         name: chat.other_user.name,
         message_date: new Date(chat.last_message.created_at * 1000),
         message: chat.last_message.text,
@@ -71,6 +73,8 @@ export default class ConversationList extends React.Component<any, any> {
       <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>
         {(this.state.data || []).map((chatItem : MessageListMessage, index : number) => (
           <ConversationListItem
+            accessToken={this.props.accessToken}
+            id={chatItem.id}
             key={index}
             isGroup={chatItem.isGroup}
             name={chatItem.name}

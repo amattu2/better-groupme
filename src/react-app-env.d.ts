@@ -2,6 +2,7 @@
 
 interface MessageListMessage {
   isGroup: boolean,
+  id: string,
   name: string,
   message_date: Date,
   message: string | null,
