@@ -3,7 +3,11 @@ import { Alert, CloseButton, InputGroup, FormControl, ButtonGroup, Button, Dropd
 import { BsFileBarGraphFill } from "react-icons/bs";
 import "../chat.css";
 
-export default class Conversation extends React.Component {
+export default class Conversation  extends React.Component<any, any> {
+  constructor(props : object) {
+    super(props);
+  }
+
   render() {
     return (
       <>
