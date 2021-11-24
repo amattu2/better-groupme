@@ -2,7 +2,7 @@
 import React from 'react';
 import { Alert, CloseButton, InputGroup, FormControl, ButtonGroup, Button, Dropdown, DropdownButton, Card, Form } from 'react-bootstrap';
 import { BsFileBarGraphFill } from "react-icons/bs";
-import "../chat.css";
+import "./chat.css";
 
 /**
  * Conversation container

@@ -2,8 +2,8 @@
 
 // Imports
 import React from 'react';
-import Sidebar from './components/Sidebar';
-import Conversation from './components/Conversation';
+import Sidebar from './Sidebar';
+import Conversation from './Conversation';
 
 /**
  * Main React class

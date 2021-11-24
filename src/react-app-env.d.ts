@@ -8,3 +8,8 @@ interface MessageListMessage {
   message: string | null,
   author: string | null
 };
+
+interface AuthProviderState {
+  authorize: boolean,
+  accessToken: string,
+};
