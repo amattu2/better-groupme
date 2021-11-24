@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Dotenv from 'dotenv';
-import AuthProvider from "./components/AuthProvider";
+import AuthProvider from './components/AuthProvider';
 import App from './components/App';
 
 // Initialize Config

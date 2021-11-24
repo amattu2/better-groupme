@@ -2,6 +2,7 @@
 
 // Imports
 import React from 'react';
+import AuthProvider from '../AuthProvider';
 import Sidebar from './Sidebar';
 import Conversation from './Conversation';
 
@@ -41,6 +42,8 @@ export default class App extends React.Component<any, any> {
    * @date 2021-11-24T14:40:56-050
    */
   render() {
+    const { authorize, accessToken }: AuthProviderState = useAuth()!;
+    
     return (
       <div className="d-flex h-100">
         <Sidebar {...this.props} changeConversation={this.changeConversation} />
