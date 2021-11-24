@@ -81,6 +81,7 @@ export default class ConversationList extends React.Component<any, any> {
             message_date={chatItem.message_date}
             message={chatItem.message}
             author={chatItem.author}
+            changeConversation={this.props.changeConversation}
           />
         ))}
       </ListGroup>

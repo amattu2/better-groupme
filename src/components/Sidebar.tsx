@@ -27,7 +27,7 @@ export default class Sidebar extends React.Component<any, any> {
     return (
       <div className="d-flex h-100">
         <SideNavigation />
-        <SideConversations {... this.props} />
+        <SideConversations {... this.props} changeConversation={this.props.changeConversation} />
       </div>
     );
   }

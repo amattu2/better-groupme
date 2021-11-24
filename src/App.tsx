@@ -20,6 +20,21 @@ export default class App extends React.Component<any, any> {
   }
 
   /**
+   * Fetch conversation
+   *
+   * @author Alec M. <https://amattu.com>
+   * @date 2021-11-24T15:43:41-050
+   */
+  async changeConversation(accessToken : string, id : string, isGroup : boolean) {
+    // Variables
+    const url = isGroup ? `https://api.groupme.com/v3/groups/${id}/messages?access_token=${accessToken}` :
+      `https://api.groupme.com/v3/direct_messages?other_user_id=${id}&access_token=${accessToken}`
+    const data = await fetch(url);
+    const dataJson = await data.json();
+    console.log(dataJson);
+  }
+
+  /**
    * Render component
    *
    * @author Alec M. <https://amattu.com>
@@ -28,7 +43,7 @@ export default class App extends React.Component<any, any> {
   render() {
     return (
       <div className="d-flex h-100">
-        <Sidebar {...this.props} />
+        <Sidebar {...this.props} changeConversation={this.changeConversation} />
         <Conversation {...this.props} />
       </div>
     );

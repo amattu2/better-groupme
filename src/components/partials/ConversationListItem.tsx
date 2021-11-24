@@ -12,7 +12,7 @@ export default class ConversationListItem extends React.Component<any, any> {
    * @author Alec M. <https://amattu.com>
    * @date 2021-11-24T14:40:56-050
    */
-  constructor(props : object) {
+  constructor(props : Array<MessageListMessage>) {
     super(props);
   }
 
@@ -24,7 +24,7 @@ export default class ConversationListItem extends React.Component<any, any> {
    */
   render() {
     return (
-      <ListGroup.Item action className="py-3 lh-tight">
+      <ListGroup.Item action className="py-3 lh-tight" onClick={() => {this.props.changeConversation(this.props.accessToken, this.props.id, this.props.isGroup)}}>
         <div className="d-flex w-100 align-items-center justify-content-between">
           <strong className="mb-1">{this.props.name}</strong>
           <small>{this.props.message_date.getDay()}</small>

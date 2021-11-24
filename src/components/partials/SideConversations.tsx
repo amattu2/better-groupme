@@ -59,7 +59,7 @@ export default class Conversations extends React.Component<any, any> {
         <ConversationListHeader />
         <FilterTabs />
         <ErrorBoundary>
-          <ConversationList {... this.props} />
+          <ConversationList {... this.props} changeConversation={this.props.changeConversation} />
         </ErrorBoundary>
       </div>
     );
