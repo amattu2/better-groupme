@@ -5,16 +5,12 @@ import { AiFillRobot } from "react-icons/ai";
 
 export default class SideNavigation extends React.Component {
   render() {
-    const styles = {
-      zIndex: 999,
-    };
-
     return (
-      <div className="d-flex flex-column flex-shrink-0 bg-white border-end" style={styles}>
+      <div className="d-flex flex-column flex-shrink-0 bg-white border-end" style={{zIndex: 999}}>
         <a href="/" className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
           <span className="fs-5 fw-semibold">&nbsp;</span>
         </a>
-        <Nav variant="pills" className="nav-flush flex-column mb-auto text-center" style={styles}>
+        <Nav variant="pills" className="nav-flush flex-column mb-auto text-center">
           <Nav.Link active className="border-bottom">
             <BsFillChatRightTextFill />
           </Nav.Link>

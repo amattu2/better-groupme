@@ -4,12 +4,8 @@ import ConversationListItem from './ConversationListItem';
 
 export default class ConversationList extends React.Component {
   render() {
-    const styles2 = {
-      overflow: "auto",
-    };
-
     return (
-      <ListGroup variant="flush" className="border-bottom scrollarea" style={styles2}>
+      <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>
         <ConversationListItem />
       </ListGroup>
     );
