@@ -14,13 +14,8 @@ const ConversationList = (props: any): JSX.Element => {
     <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>
       {(conversations || []).map((chatItem : MessageListMessage, index : number) => (
         <ConversationListItem
-          id={chatItem.id}
           key={index}
-          isGroup={chatItem.isGroup}
-          name={chatItem.name}
-          message_date={chatItem.message_date}
-          message={chatItem.message}
-          author={chatItem.author}
+          {... chatItem}
         />
       ))}
     </ListGroup>

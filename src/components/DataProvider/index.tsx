@@ -32,12 +32,15 @@ export const DataProvider = (props: any) => {
       const groupsJson = await groups.json();
       (groupsJson.response || []).forEach((group : any) => {
         messages.push({
-          isGroup: true,
           id: group.id,
           name: group.name,
-          message_date: new Date(group.messages.last_message_created_at * 1000),
-          message: group.messages.preview.text,
-          author: group.messages.preview.nickname
+          preview: {
+            author: group.messages.preview.nickname,
+            message: group.messages.preview.text,
+            message_date: new Date(group.messages.last_message_created_at * 1000),
+          },
+          isGroup: true,
+          isPublic: !group.requires_approval,
         })
       });
 
@@ -46,17 +49,20 @@ export const DataProvider = (props: any) => {
       const chatsJson = await chats.json();
       (chatsJson.response || []).forEach((chat : any) => {
         messages.push({
-          isGroup: false,
           id: chat.other_user.id,
           name: chat.other_user.name,
-          message_date: new Date(chat.last_message.created_at * 1000),
-          message: chat.last_message.text,
-          author: null
+          preview: {
+            author: chat.other_user.name,
+            message_date: new Date(chat.last_message.created_at * 1000),
+            message: chat.last_message.text,
+          },
+          isGroup: false,
+          isPublic: false,
         })
       });
 
       // Set Data
-      dataSet(messages.sort((a, b) => { return b.message_date.getTime() - a.message_date.getTime(); }));
+      dataSet(messages.sort((a, b) => { return b.preview.message_date.getTime() - a.preview.message_date.getTime(); }));
     })();
   }, [accessToken]);
 
