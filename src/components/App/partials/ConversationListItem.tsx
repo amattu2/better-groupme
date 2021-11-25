@@ -5,35 +5,21 @@ import { ListGroup } from 'react-bootstrap';
 /*
  * A conversation sidebar list item
  */
-export default class ConversationListItem extends React.Component<any, any> {
-  /**
-   * Class constructor
-   *
-   * @author Alec M. <https://amattu.com>
-   * @date 2021-11-24T14:40:56-050
-   */
-  constructor(props : Array<MessageListMessage>) {
-    super(props);
-  }
+const ConversationListItem = (props: any): JSX.Element => {
+  const { name, message_date, isGroup, author, message } : any = props;
 
-  /**
-   * Render component
-   *
-   * @author Alec M. <https://amattu.com>
-   * @date 2021-11-24T14:41:25-050
-   */
-  render() {
-    return (
-      <ListGroup.Item action className="py-3 lh-tight" onClick={() => {this.props.changeConversation(this.props.accessToken, this.props.id, this.props.isGroup)}}>
-        <div className="d-flex w-100 align-items-center justify-content-between">
-          <strong className="mb-1">{this.props.name}</strong>
-          <small>{this.props.message_date.getDay()}</small>
-        </div>
-        <div className="col-10 mb-1 small">
-          <b>{this.props.isGroup ? `${this.props.author}: ` : ""}</b>
-          {this.props.message}
-        </div>
-      </ListGroup.Item>
-    );
-  }
-}
+  return (
+    <ListGroup.Item action className="py-3 lh-tight">
+      <div className="d-flex w-100 align-items-center justify-content-between">
+        <strong className="mb-1">{name}</strong>
+        <small>{message_date.getDay()}</small>
+      </div>
+      <div className="col-10 mb-1 small">
+        <b>{isGroup ? `${author}: ` : ""}</b>
+        {message}
+      </div>
+    </ListGroup.Item>
+  );
+};
+
+export default ConversationListItem;

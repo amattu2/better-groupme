@@ -36,32 +36,16 @@ class ErrorBoundary extends React.Component<any, any> {
 /**
  * Combines the sidebar component
  */
-export default class Conversations extends React.Component<any, any> {
-  /**
-   * Class constructor
-   *
-   * @author Alec M. <https://amattu.com>
-   * @date 2021-11-24T14:49:39-050
-   */
-  constructor(props : object) {
-    super(props);
-  }
+const SideConversations = (props: any): JSX.Element => {
+  return (
+    <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white border-end" style={{width: "350px", zIndex: 998}}>
+      <ConversationListHeader />
+      <FilterTabs />
+      <ErrorBoundary>
+        <ConversationList />
+      </ErrorBoundary>
+    </div>
+  );
+};
 
-  /**
-   * Render component
-   *
-   * @author Alec M. <https://amattu.com>
-   * @date 2021-11-24T14:40:56-050
-   */
-  render() {
-    return (
-      <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white border-end" style={{width: "350px", zIndex: 998}}>
-        <ConversationListHeader />
-        <FilterTabs />
-        <ErrorBoundary>
-          <ConversationList {... this.props} changeConversation={this.props.changeConversation} />
-        </ErrorBoundary>
-      </div>
-    );
-  }
-}
+export default SideConversations;

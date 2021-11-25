@@ -10,6 +10,5 @@ interface MessageListMessage {
 };
 
 interface AuthProviderState {
-  authorize: boolean,
   accessToken: string,
 };

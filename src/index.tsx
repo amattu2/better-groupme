@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Dotenv from 'dotenv';
-import AuthProvider from './components/AuthProvider';
 import App from './components/App';
 
 // Initialize Config
@@ -11,9 +10,7 @@ Dotenv.config();
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -16,53 +16,30 @@ export const useAuth = () => {
 /**
  * User authentication provider
  */
-export default class AuthProvider extends React.Component<any, any> {
+export const AuthProvider = (props: any) => {
   /**
-   * Class constructor
+   * GET access_token Parameter
    *
-   * @date 2021-11-24T17:47:06-050
+   * @type {URLSearchParams}
    */
-  constructor(props : any) {
-    super(props);
-
-    /**
-     * URL Query Params
-     *
-     * @type {URLSearchParams}
-     */
-    const params : URLSearchParams = new URLSearchParams(window.location.search);
-    if (params.get("access_token")) {
-      const date = new Date();
-      date.setTime(date.getTime() + (7*24*60*60*1000));
-      document.cookie = `access_token=${(params.get("access_token") || "")}; expires=${date.toUTCString()}; path=/`;
-    }
-
-    /**
-     * GroupMe Access Token Cookie
-     *
-     * @type {String}
-     */
-    const accessToken : string = (document.cookie.match(/^(?:.*;)?\s*access_token\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1] || "";
-    if (!accessToken) {
-      this.setState({
-        result: [{
-          authorized: false,
-          accessToken: "",
-        }]
-      });
-    } else {
-      this.setState({
-        result: [{
-          authorized: true,
-          accessToken: accessToken,
-        }]
-      });
-    }
+  const params : URLSearchParams = new URLSearchParams(window.location.search);
+  if (params.get("access_token")) {
+    const date = new Date();
+    date.setTime(date.getTime() + (7*24*60*60*1000));
+    document.cookie = `access_token=${(params.get("access_token") || "")}; expires=${date.toUTCString()}; path=/`;
   }
 
-  render() {
-    return (
-      <AuthContext.Provider value={this.state.result}></AuthContext.Provider>
-    );
+  /**
+   * GroupMe access token
+   *
+   * @type {String}
+   */
+  const accessToken : string = (document.cookie.match(/^(?:.*;)?\s*access_token\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1] || "";
+
+  // Return
+  if (accessToken) {
+    return <AuthContext.Provider value={{accessToken: accessToken}}>{props.children}</AuthContext.Provider>;
+  } else {
+    return <h1>No Access Token</h1>;
   }
 }
