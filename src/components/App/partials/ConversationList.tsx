@@ -12,7 +12,7 @@ const ConversationList = (props: any): JSX.Element => {
 
   return (
     <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>
-      {(conversations || []).map((chatItem : MessageListMessage, index : number) => (
+      {(conversations || []).map((chatItem : ConversationInfo, index : number) => (
         <ConversationListItem
           key={index}
           {... chatItem}

@@ -25,7 +25,7 @@ export const DataProvider = (props: any) => {
   useEffect(() => {
     (async function() {
       // Variables
-      let messages : Array<MessageListMessage> = [];
+      let messages : Array<ConversationInfo> = [];
 
       // Fetch Groups Data
       const groups = await fetch(`https://api.groupme.com/v3/groups?access_token=${accessToken}&omit=memberships`);

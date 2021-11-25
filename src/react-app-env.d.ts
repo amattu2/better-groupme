@@ -1,6 +1,6 @@
 /// <reference types="react-scripts" />
 
-interface MessageListMessage {
+interface ConversationInfo {
   id: string,
   name: string,
   preview: any | null,
@@ -31,10 +31,10 @@ interface ConversationMessage {
 };
 
 interface DataProviderValue {
-  conversations: Array<MessageListMessage>,
+  conversations: Array<ConversationInfo>,
 };
 
 interface Conversation {
-  convo: MessageListMessage,
+  convo: ConversationInfo,
   messages: Array<ConversationMessage>,
 };
