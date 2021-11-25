@@ -1,5 +1,6 @@
 // Imports
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 /**
  * Initialize Auth Context
@@ -40,6 +41,6 @@ export const AuthProvider = (props: any) => {
   if (accessToken) {
     return <AuthContext.Provider value={{accessToken: accessToken}}>{props.children}</AuthContext.Provider>;
   } else {
-    return <h1>No Access Token</h1>;
+    return <Navigate to="https://example.com" />;
   }
 }

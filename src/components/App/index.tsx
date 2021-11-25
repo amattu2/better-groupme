@@ -2,6 +2,7 @@
 
 // Imports
 import React from 'react';
+import { HashRouter, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from '../AuthProvider';
 import Sidebar from './Sidebar';
 import Conversation from './Conversation';
@@ -27,10 +28,12 @@ const changeConversation = async (accessToken : string, id : string, isGroup : b
 const App = (props: any) : JSX.Element => {
   return (
     <AuthProvider>
-      <div className="d-flex h-100">
-        <Sidebar />
-        <Conversation />
-      </div>
+      <HashRouter>
+        <div className="d-flex h-100">
+          <Sidebar />
+          <Conversation />
+        </div>
+      </HashRouter>
     </AuthProvider>
   );
 };
