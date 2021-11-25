@@ -7,12 +7,10 @@ import SideConversations from './partials/SideConversations';
  * Complete sidebar component
  */
 const Sidebar = (props: any): JSX.Element => {
-  const { changeConversation } : any = props;
-
   return (
     <div className="d-flex h-100">
       <SideNavigation />
-      <SideConversations changeConversation={changeConversation} />
+      <SideConversations />
     </div>
   );
 };
