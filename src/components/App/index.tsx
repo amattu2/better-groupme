@@ -27,14 +27,14 @@ const changeConversation = async (accessToken : string, id : string, isGroup : b
  */
 const App = (props: any) : JSX.Element => {
   return (
-    <AuthProvider>
-      <HashRouter>
+    <HashRouter basename="/">
+      <AuthProvider>
         <div className="d-flex h-100">
           <Sidebar />
           <Conversation />
         </div>
-      </HashRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </HashRouter>
   );
 };
 
