@@ -3,6 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SideNavigation from './partials/SideNavigation';
 import SideConversations from './partials/SideConversations';
+import SidebarFiller from './SidebarFiller';
 
 /**
  * Complete sidebar component
@@ -13,6 +14,12 @@ const Sidebar = (props: any): JSX.Element => {
       <SideNavigation />
       <Routes>
         <Route path='/' element={<SideConversations />} />
+        <Route path='/group/:id' element={<SideConversations />} />
+        <Route path='/conversation/:id' element={<SideConversations />} />
+        <Route path='/contacts' element={<SidebarFiller />} />
+        <Route path='/archive' element={<SidebarFiller />} />
+        <Route path='/bots' element={<SidebarFiller />} />
+        <Route path='/settings' element={<SidebarFiller />} />
       </Routes>
     </div>
   );
