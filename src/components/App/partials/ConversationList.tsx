@@ -53,7 +53,7 @@ const ConversationList = (props: any): JSX.Element => {
       // Set Data
       dataSet(messages.sort((a, b) => { return b.message_date.getTime() - a.message_date.getTime(); }));
     })();
-  }, []);
+  }, [accessToken]);
 
   return (
     <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>
