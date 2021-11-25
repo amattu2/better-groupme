@@ -6,10 +6,14 @@ import { ListGroup } from 'react-bootstrap';
  * A conversation sidebar list item
  */
 const ConversationListItem = (props: any): JSX.Element => {
-  const { name, message_date, isGroup, author, message } : any = props;
+  const { id, name, message_date, isGroup, author, message } : any = props;
+
+  const handleClick = () : void => {
+    window.location.hash = `/${isGroup ? "group" : "conversation"}/${id}`;
+  };
 
   return (
-    <ListGroup.Item action className="py-3 lh-tight">
+    <ListGroup.Item action className="py-3 lh-tight" onClick={handleClick}>
       <div className="d-flex w-100 align-items-center justify-content-between">
         <strong className="mb-1">{name}</strong>
         <small>{message_date.getDay()}</small>
