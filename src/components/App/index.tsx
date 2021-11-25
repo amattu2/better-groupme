@@ -2,7 +2,7 @@
 
 // Imports
 import React from 'react';
-import { HashRouter, Route, Navigate } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { AuthProvider } from '../AuthProvider';
 import Sidebar from './Sidebar';
 import Conversation from './Conversation';
