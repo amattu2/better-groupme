@@ -6,10 +6,10 @@ import { ListGroup } from 'react-bootstrap';
  * A conversation sidebar list item
  */
 const ConversationListItem = (props: any): JSX.Element => {
-  const { id, name, message_date, isGroup, author, message, active } : any = props;
+  const { id, name, message_date, isGroup, author, message } : any = props;
 
   return (
-    <ListGroup.Item href={`#/${isGroup ? "group" : "conversation"}/${id}`} action active={active} className="py-3 lh-tight">
+    <ListGroup.Item href={`#/${isGroup ? "group" : "conversation"}/${id}`} action className="py-3 lh-tight">
       <div className="d-flex w-100 align-items-center justify-content-between">
         <strong className="mb-1">{name}</strong>
         <small>{message_date.toISOString().split('T')[0]}</small>
