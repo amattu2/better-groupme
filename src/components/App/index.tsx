@@ -2,10 +2,11 @@
 
 // Imports
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from '../AuthProvider';
 import Sidebar from './Sidebar';
 import Conversation from './Conversation';
+import ConversationFiller from './ConversationFiller';
 
 /**
 * Fetch conversation
@@ -31,7 +32,11 @@ const App = (props: any) : JSX.Element => {
       <AuthProvider>
         <div className="d-flex h-100">
           <Sidebar />
-          <Conversation />
+            <Routes>
+              <Route path='/' element={<ConversationFiller />} />
+              <Route path='/conversation/:id' element={<Conversation />} />
+              <Route path='/group/:id' element={<Conversation />} />
+            </Routes>
         </div>
       </AuthProvider>
     </HashRouter>

@@ -10,9 +10,9 @@ import "./chat.css";
 const Conversation = (props: any): JSX.Element => {
   return (
     <div className="d-flex-fill w-100 bg-light position-relative">
-      <a href="/" className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom bg-white">
+      <a className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom bg-white">
         <span className="fs-5 fw-semibold">Ben Mourside</span>
-        <CloseButton className="ms-auto" />
+        <CloseButton className="ms-auto" onClick={() => window.location.hash = ""} />
       </a>
       <div className="overflow-auto chat-history p-3">
         <Alert variant="warning" dismissible>
