@@ -1,12 +1,11 @@
 /// <reference types="react-scripts" />
 
 interface MessageListMessage {
-  isGroup: boolean,
   id: string,
   name: string,
-  message_date: Date,
-  message: string | null,
-  author: string | null
+  preview: any | null,
+  isGroup: boolean,
+  isPublic: boolean,
 };
 
 interface AuthProviderState {
@@ -33,4 +32,9 @@ interface ConversationMessage {
 
 interface DataProviderValue {
   conversations: Array<MessageListMessage>,
+};
+
+interface Conversation {
+  convo: MessageListMessage,
+  messages: Array<ConversationMessage>,
 };
