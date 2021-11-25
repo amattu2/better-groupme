@@ -54,7 +54,6 @@ const Conversation = (props: any): JSX.Element => {
 
       // Set Data
       dataSet(messages);
-      console.log(data);
     })();
   }, [accessToken, id, type]);
 

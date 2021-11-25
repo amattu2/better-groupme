@@ -14,21 +14,21 @@ const SideNavigation = (props: any): JSX.Element => {
         <span className="fs-5 fw-semibold">&nbsp;</span>
       </a>
       <Nav variant="pills" className="nav-flush flex-column mb-auto text-center">
-        <Nav.Link active className="border-bottom" style={{borderRadius: 0}}>
+        <Nav.Link href="#/" className="border-bottom" style={{borderRadius: 0}}>
           <BsFillChatRightTextFill />
         </Nav.Link>
-        <Nav.Link className="border-bottom" title="Contacts">
+        <Nav.Link href="#/contacts" className="border-bottom" title="Contacts">
           <BsPeopleFill />
         </Nav.Link>
-        <Nav.Link className="border-bottom" title="Group Archive">
+        <Nav.Link href="#/archive" className="border-bottom" title="Group Archive">
           <BsFillArchiveFill />
         </Nav.Link>
-        <Nav.Link className="border-bottom" title="My Bots">
+        <Nav.Link href="#/bots" className="border-bottom" title="My Bots">
           <AiFillRobot />
         </Nav.Link>
       </Nav>
       <div className="border-top">
-        <a href="/" className="d-flex align-items-center justify-content-center p-3 text-decoration-none">
+        <a href="#/settings" className="d-flex align-items-center justify-content-center p-3 text-decoration-none">
           <BsGridFill />
         </a>
       </div>
