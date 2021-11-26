@@ -5,7 +5,7 @@ import { useAuth } from '../AuthProvider';
 import { useData } from '../DataProvider';
 import { Alert, Badge, CloseButton, InputGroup, FloatingLabel, Col, Figure, FormControl, ButtonGroup, Button, Dropdown, DropdownButton, Card, Form } from 'react-bootstrap';
 import { BsFileBarGraphFill } from "react-icons/bs";
-import "./chat.css";
+import "./style.css";
 
 const formatURL = (type : string | undefined, id : string | undefined, token : string) : string => {
   return type === "group" ? `https://api.groupme.com/v3/groups/${id}/messages?access_token=${token}` :

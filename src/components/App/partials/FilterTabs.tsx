@@ -2,7 +2,7 @@
 import React from 'react';
 import { ListGroup, Tabs, Tab } from 'react-bootstrap';
 import ConversationList from './ConversationList';
-import "../chat.css";
+import "../style.css";
 
 /**
  * Error boundary for Conversation List
