@@ -2,11 +2,9 @@
 
 // Imports
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { AuthProvider } from '../AuthProvider';
-import Sidebar from './Sidebar';
-import ConversationWrapper from './ConversationWrapper';
-import ConversationFiller from './ConversationFiller';
+import AppWrapper from './AppWrapper';
 
 /**
  * Main React App
@@ -15,13 +13,7 @@ const App = (props: any) : JSX.Element => {
   return (
     <HashRouter basename="/">
       <AuthProvider>
-        <div className="d-flex h-100">
-          <Sidebar />
-          <Routes>
-            <Route path='/' element={<ConversationFiller />} />
-            <Route path='/:type/:id' element={<ConversationWrapper />} />
-          </Routes>
-        </div>
+        <AppWrapper />
       </AuthProvider>
     </HashRouter>
   );

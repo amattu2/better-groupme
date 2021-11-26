@@ -2,7 +2,6 @@
 import React from 'react';
 import Conversation from './partials/Conversation';
 import { ConversationProvider } from '../DataProviders/ConversationProvider';
-import { ConversationListProvider } from '../DataProviders/ConversationListProvider';
 import { useAuth } from '../AuthProvider';
 import { useParams } from 'react-router-dom';
 
@@ -40,13 +39,11 @@ const ConversationWrapper = (props: any): JSX.Element => {
   const { type, id } : any = useParams();
 
   return (
-    <ConversationListProvider token={accessToken} >
-      <ConversationProvider id={id} type={type} token={accessToken} >
-        <ErrorBoundary>
-          <Conversation id={id} />
-        </ErrorBoundary>
-      </ConversationProvider>
-    </ConversationListProvider>
+    <ConversationProvider id={id} type={type} token={accessToken} >
+      <ErrorBoundary>
+        <Conversation id={id} />
+      </ErrorBoundary>
+    </ConversationProvider>
   );
 };
 
