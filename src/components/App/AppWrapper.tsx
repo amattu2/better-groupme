@@ -33,7 +33,6 @@ const AppWrapper = (props: any): JSX.Element => {
               <Route path='/contacts' element={<SidebarFiller />} />
               <Route path='/archive' element={<SidebarFiller />} />
               <Route path='/bots' element={<SideBots />} />
-              <Route path='/settings' element={<SidebarFiller />} />
             </Routes>
           </div>
 
@@ -41,7 +40,10 @@ const AppWrapper = (props: any): JSX.Element => {
           <Routes>
             <Route path='/' element={<ConversationFiller />} />
             <Route path='/:type/:id' element={<ConversationWrapper />} />
-            <Route path='/bots/' element={<h3>Bots</h3>} />
+            <Route path='/bots' element={<h3>Bots</h3>} />
+            <Route path='/contacts' element={<h3>contacts</h3>} />
+            <Route path='/archive/' element={<h3>archive</h3>} />
+            <Route path='/settings/' element={<h3>settings</h3>} />
           </Routes>
         </div>
       </ConversationListProvider>
