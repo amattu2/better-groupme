@@ -1,6 +1,6 @@
 // Imports
 import React from 'react';
-import { ListGroup, Tabs, Tab } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import { BotListProvider } from '../../DataProviders/BotListProvider';
 import { useAuth } from '../../AuthProvider';
 import BotList from './BotList';
@@ -41,7 +41,9 @@ const SideBots = (props: any): JSX.Element => {
 
   return (
     <BotListProvider token={accessToken}>
-      <BotList />
+      <ErrorBoundary>
+        <BotList />
+      </ErrorBoundary>
     </BotListProvider>
   );
 };
