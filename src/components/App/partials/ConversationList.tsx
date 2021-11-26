@@ -8,11 +8,20 @@ import ConversationListItem from './ConversationListItem';
  * Generates a list of conversation items
  */
 const ConversationList = (props: any): JSX.Element => {
+  const { filter } : any = props;
   const { conversations } : any = useData();
+  const filteredConvos = conversations.filter((chatItem : ConversationInfo) => {
+    if (filter === "groups")
+      return chatItem.isGroup;
+    if (filter === "direct")
+      return !chatItem.isGroup;
+
+    return true;
+  });
 
   return (
-    <ListGroup variant="flush" className="border-bottom scrollarea" style={{overflow: "auto"}}>
-      {(conversations || []).map((chatItem : ConversationInfo, index : number) => (
+    <ListGroup variant="flush" className="border-bottom scrollarea">
+      {(filteredConvos || []).map((chatItem : ConversationInfo, index : number) => (
         <ConversationListItem
           key={index}
           {... chatItem}

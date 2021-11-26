@@ -84,3 +84,7 @@
 .chat-message {
   padding: 20px;
 }
+
+.tab-content {
+  overflow-y: auto;
+}
