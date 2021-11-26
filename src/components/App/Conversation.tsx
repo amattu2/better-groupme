@@ -222,6 +222,15 @@ const Conversation = (props: any): JSX.Element => {
             </div>
             <i>Benjamin Mourside Added bot TestBot to Group</i>
           </li>
+          <li className="clearfix text-end">
+            <div className="message-data">
+              <span className="message-data-time">Today 11:55 PM &middot; <b>Test Bot</b></span>
+              <img src="https://i.groupme.com/700x623.jpeg.98a1c69b708e46c3affbaaae39416e9d" alt="Avatar" />
+            </div>
+            <div className="message other-message float-end">
+              Hello from a bot
+            </div>
+          </li>
         </ul>
       </div>
       <div className="position-absolute bottom-0 start-0 end-0 p-2 bg-white d-flex border-top">
