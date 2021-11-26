@@ -67,3 +67,22 @@ type ConversationListProviderState = ConversationListProviderState2 | Conversati
 interface ConversationListProviderProperties {
   token: string,
 };
+
+interface BotInfo {
+  name: string,
+}
+
+interface BotListProviderState1 {
+  status: 'LOADING' | 'ERROR'
+};
+
+interface BotListProviderState2 {
+  status: 'LOADED',
+  value: Array<BotInfo>,
+};
+
+type BotListProviderState = BotListProviderState2 | BotListProviderState1;
+
+interface BotListProviderProperties {
+  token: string,
+};
