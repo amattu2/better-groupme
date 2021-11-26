@@ -1,7 +1,7 @@
 // Imports
 import React from 'react';
 import Conversation from './partials/Conversation';
-import { ConversationProvider } from '../DataProviders/ConversationProvider';
+import { ConversationProvider } from '../DataProviders/Conversation';
 import { useAuth } from '../AuthProvider';
 import { useParams } from 'react-router-dom';
 

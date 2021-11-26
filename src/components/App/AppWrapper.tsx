@@ -2,8 +2,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useAuth } from '../AuthProvider';
-import { UserProfileProvider } from '../DataProviders/UserProfileProvider';
-import { ConversationListProvider } from '../DataProviders/ConversationListProvider';
+import { UserProfileProvider } from '../DataProviders/UserProfile';
+import { ConversationListProvider } from '../DataProviders/ConversationList';
 import ConversationWrapper from './ConversationWrapper';
 import ConversationFiller from './ConversationFiller';
 import SideNavigation from './partials/SideNavigation';

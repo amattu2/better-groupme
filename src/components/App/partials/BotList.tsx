@@ -1,6 +1,6 @@
 // Imports
 import React from 'react';
-import { useBotListData } from '../../DataProviders/BotListProvider';
+import { useBotListData } from '../../DataProviders/BotList';
 import { ListGroup, Spinner } from 'react-bootstrap';
 
 /*

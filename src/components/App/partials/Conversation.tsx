@@ -1,7 +1,7 @@
 // Imports
 import React from 'react';
-import { useConversationData } from '../../DataProviders/ConversationProvider';
-import { useConversationListData } from '../../DataProviders/ConversationListProvider';
+import { useConversationData } from '../../DataProviders/Conversation';
+import { useConversationListData } from '../../DataProviders/ConversationList';
 import { Alert, Badge, CloseButton, InputGroup, FloatingLabel,
   Col, Figure, ButtonGroup, Button,
   Card, Form,

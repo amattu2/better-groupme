@@ -1,7 +1,7 @@
 // Imports
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { BotListProvider } from '../../DataProviders/BotListProvider';
+import { BotListProvider } from '../../DataProviders/BotList';
 import { useAuth } from '../../AuthProvider';
 import BotList from './BotList';
 
