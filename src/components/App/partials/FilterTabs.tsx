@@ -41,29 +41,25 @@ const FilterTabs = (props: any): JSX.Element => {
   const { accessToken } : any = useAuth();
 
   return (
-    <Tabs defaultActiveKey="All">
-      <Tab eventKey="All" title="All">
-        <ErrorBoundary>
-          <ConversationListProvider token={accessToken} >
+    <ConversationListProvider token={accessToken} >
+      <Tabs defaultActiveKey="All">
+        <Tab eventKey="All" title="All">
+          <ErrorBoundary>
             <ConversationList filter="all"/>
-          </ConversationListProvider>
-        </ErrorBoundary>
-      </Tab>
-      <Tab eventKey="Direct" title="Direct">
-        <ErrorBoundary>
-          <ConversationListProvider token={accessToken} >
+          </ErrorBoundary>
+        </Tab>
+        <Tab eventKey="Direct" title="Direct">
+          <ErrorBoundary>
             <ConversationList filter="direct"/>
-          </ConversationListProvider>
-        </ErrorBoundary>
-      </Tab>
-      <Tab eventKey="Groups" title="Groups">
-        <ErrorBoundary>
-          <ConversationListProvider token={accessToken} >
+          </ErrorBoundary>
+        </Tab>
+        <Tab eventKey="Groups" title="Groups">
+          <ErrorBoundary>
             <ConversationList filter="groups"/>
-          </ConversationListProvider>
-        </ErrorBoundary>
-      </Tab>
-    </Tabs>
+          </ErrorBoundary>
+        </Tab>
+      </Tabs>
+    </ConversationListProvider>
   );
 };
 
