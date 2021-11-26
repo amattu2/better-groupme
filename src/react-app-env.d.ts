@@ -86,3 +86,26 @@ type BotListProviderState = BotListProviderState2 | BotListProviderState1;
 interface BotListProviderProperties {
   token: string,
 };
+
+interface UserInfo {
+  id: string,
+  name: string,
+  avatar_url: string | null,
+  phone_number: string | null,
+  email: string | null,
+};
+
+interface UserProfileProviderState1 {
+  status: 'LOADING' | 'ERROR'
+};
+
+interface UserProfileProviderState2 {
+  status: 'LOADED',
+  value: UserInfo,
+};
+
+type UserProfileProviderState = UserProfileProviderState2 | UserProfileProviderState1;
+
+interface UserProfileProviderProperties {
+  token: string,
+};
