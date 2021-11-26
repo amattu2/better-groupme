@@ -2,7 +2,6 @@
 import React from 'react';
 import { useConversationListData } from '../../DataProviders/ConversationList';
 import { ListGroup, Spinner } from 'react-bootstrap';
-import ConversationListItem from './ConversationListItem';
 
 /*
  * Generates a list of conversation items
@@ -33,10 +32,16 @@ const ConversationList = (props: any): JSX.Element => {
   return (
     <ListGroup variant="flush" className="border-bottom scrollarea">
       {(filteredConvos || []).map((chatItem : ConversationInfo, index : number) => (
-        <ConversationListItem
-          key={index}
-          {... chatItem}
-        />
+        <ListGroup.Item key={index} href={`#/${chatItem.isGroup ? "group" : "conversation"}/${chatItem.id}`} action className="py-3 lh-tight">
+          <div className="d-flex w-100 align-items-center justify-content-between">
+            <strong className="mb-1">{chatItem.name}</strong>
+            <small>{chatItem.preview.message_date.toISOString().split('T')[0]}</small>
+          </div>
+          <div className="col-10 mb-1 small">
+            <b>{chatItem.isGroup ? `${chatItem.preview.author}: ` : ""}</b>
+            {chatItem.preview.message}
+          </div>
+        </ListGroup.Item>
       ))}
     </ListGroup>
   );
