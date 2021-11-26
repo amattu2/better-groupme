@@ -28,6 +28,7 @@ interface ConversationMessage {
   favorites: Array<string>,
   attachments: Array<any>,
   event: any,
+  isSystem: boolean,
 };
 
 interface DataProviderValue {

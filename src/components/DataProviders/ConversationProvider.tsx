@@ -65,6 +65,7 @@ export const ConversationProvider: FC<ConversationProviderProperties> = (props :
            favorites: message.favorited_by,
            attachments: message.attachments,
            event: message.event,
+           isSystem: message.system
         });
       });
 

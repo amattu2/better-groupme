@@ -216,6 +216,12 @@ const Conversation = (props: any): JSX.Element => {
               </Card>
             </div>
           </li>
+          <li className="clearfix text-end">
+            <div className="message-data">
+              <span className="message-data-time"><b>GroupMe</b></span>
+            </div>
+            <i>Benjamin Mourside Added bot TestBot to Group</i>
+          </li>
         </ul>
       </div>
       <div className="position-absolute bottom-0 start-0 end-0 p-2 bg-white d-flex border-top">
