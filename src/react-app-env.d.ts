@@ -13,8 +13,8 @@ interface AuthProviderState {
 };
 
 interface HashArgumentFormat {
-  type: string | undefined,
-  id: string | undefined,
+  type: string,
+  id: string,
 };
 
 interface ConversationMessage {
@@ -37,4 +37,21 @@ interface DataProviderValue {
 interface Conversation {
   convo: ConversationInfo,
   messages: Array<ConversationMessage>,
+};
+
+interface ConversationProviderState1 {
+  status: 'LOADING' | 'ERROR'
+};
+
+interface ConversationProviderState2 {
+  status: 'LOADED',
+  value: Conversation
+};
+
+type ConversationProviderState = ConversationProviderState2 | ConversationProviderState1;
+
+interface ConversationProviderProperties {
+  id: number,
+  type: string,
+  token: string,
 };

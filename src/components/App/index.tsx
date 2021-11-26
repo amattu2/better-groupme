@@ -6,7 +6,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from '../AuthProvider';
 import { DataProvider } from '../DataProvider';
 import Sidebar from './Sidebar';
-import Conversation from './Conversation';
+import ConversationWrapper from './ConversationWrapper';
 import ConversationFiller from './ConversationFiller';
 
 /**
@@ -21,7 +21,7 @@ const App = (props: any) : JSX.Element => {
             <Sidebar />
             <Routes>
               <Route path='/' element={<ConversationFiller />} />
-              <Route path='/:type/:id' element={<Conversation />} />
+              <Route path='/:type/:id' element={<ConversationWrapper />} />
             </Routes>
           </div>
         </DataProvider>

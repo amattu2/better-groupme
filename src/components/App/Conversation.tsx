@@ -1,82 +1,39 @@
 // Imports
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useAuth } from '../AuthProvider';
-import { useData } from '../DataProvider';
-import { Alert, Badge, CloseButton, InputGroup, FloatingLabel, Col, Figure, FormControl, ButtonGroup, Button, Dropdown, DropdownButton, Card, Form } from 'react-bootstrap';
+import React from 'react';
+import { useConversationData } from '../DataProviders/ConversationProvider';
+import { Alert, Badge, CloseButton, InputGroup, FloatingLabel,
+  Col, Figure, ButtonGroup, Button, Dropdown, DropdownButton,
+  Card, Form,
+  Spinner
+} from 'react-bootstrap';
 import { BsFileBarGraphFill } from "react-icons/bs";
 import "./style.css";
-
-const formatURL = (type : string | undefined, id : string | undefined, token : string) : string => {
-  return type === "group" ? `https://api.groupme.com/v3/groups/${id}/messages?access_token=${token}` :
-   `https://api.groupme.com/v3/direct_messages?other_user_id=${id}&access_token=${token}`;
-};
 
 /**
  * Conversation container
  */
 const Conversation = (props: any): JSX.Element => {
-  const { accessToken } : any = useAuth();
-  const { conversations } : any = useData();
-  const { type, id } : HashArgumentFormat = useParams();
-  const [data, dataSet] = useState<Conversation>();
+  const data : any = useConversationData();
 
-  useEffect(() => {
-    (async function() {
-      // Convo
-      const convo : any = conversations.filter((d : any) => d.id === id)[0];
-      if (!convo || !convo.name) {
-        window.location.hash = "";
-        return;
-      }
+  if (data.status === 'LOADING') {
+    return (
+      <div className="d-flex justify-content-center align-items-center w-100 bg-light">
+        <Spinner animation="border" />
+      </div>
+    );
+  } else if (data.status === 'ERROR') {
+    window.location.hash = "#";
+  }
 
-      // Fetch Messages
-      const d = await fetch(formatURL(type, id, accessToken));
-      if (d.status !== 200) {
-        window.location.hash = "";
-        return;
-      }
-
-      // Parse JSON
-      const { meta, response } = await d.json();
-      if (!response || !meta || meta.code !== 200) {
-        window.location.hash = "";
-        return;
-      }
-
-      // Format Response
-      let messages : Array<ConversationMessage> = [];
-      (response.messages || response.direct_messages).forEach((message : any) => {
-        messages.push({
-           avatar_url: message.avatar_url,
-           created_at: message.created_at,
-           name: message.name,
-           text: message.text,
-           sender_id: message.sender_id,
-           sender_type: message.sender_type,
-           id: message.id,
-           favorites: message.favorited_by,
-           attachments: message.attachments,
-           event: message.event,
-        });
-      });
-
-      // Set Data
-      dataSet({convo: convo, messages: messages});
-    })();
-  }, [conversations, accessToken, id, type]);
-
-  if (!data)
-    return <div />
   return (
     <div className="d-flex-fill w-100 bg-light position-relative">
       <span className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom bg-white">
-        <span className="fs-5 fw-semibold">{data.convo.name}</span>
+        <span className="fs-5 fw-semibold">{data.value.convo.name}</span>
         <CloseButton className="ms-auto" onClick={() => window.location.hash = ""} />
       </span>
       <div className="overflow-auto chat-history p-3">
 
-        {data.convo.isPublic &&
+        {data.value.convo.isPublic &&
           <Alert variant="warning" dismissible>
             <Alert.Heading>Reminder</Alert.Heading>
             <p>This is a public access group, anyone can join with the invite link. Any message you send is visible to past and present group members, and once sent, messages cannot be reliably deleted.</p>

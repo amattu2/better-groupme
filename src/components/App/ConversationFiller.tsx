@@ -7,7 +7,7 @@ import React from 'react';
 const ConversationFiller = (props: any): JSX.Element => {
   return (
     <div className="d-flex justify-content-center align-items-center w-100 bg-light position-relative p-5">
-      <h1 className="muted">Select a conversation</h1>
+      <h2 className="text-muted">(Select a conversation)</h2>
     </div>
   );
 };
