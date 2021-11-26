@@ -23,6 +23,7 @@ const Conversation = (props: any): JSX.Element => {
     );
   } else if (data.status === 'ERROR') {
     window.location.hash = "#";
+    return <div />;
   }
 
   return (
