@@ -44,7 +44,7 @@ const Conversation = (props: any): JSX.Element => {
         <ul className="m-b-0">
           <li className="clearfix">
             <div className="message-data text-end">
-              <span className="message-data-time">November 21st, 2021 at 10:22am</span>
+              <span className="message-data-time">November 21st, 2021 at 10:22am &middot; <a href="#/">User A</a></span>
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
             </div>
             <div className="message other-message float-end"> Hi Aiden, how are you? How is the project coming along? </div>
@@ -124,7 +124,7 @@ const Conversation = (props: any): JSX.Element => {
           </li>
           <li className="clearfix">
             <div className="message-data text-end">
-              <span className="message-data-time">7:25 PM, Today</span>
+              <span className="message-data-time">7:25 PM, Today &middot; <a href="#/">User A</a></span>
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
             </div>
             <div className="message other-message float-end w-100">
@@ -218,7 +218,7 @@ const Conversation = (props: any): JSX.Element => {
           </li>
           <li className="clearfix text-end">
             <div className="message-data">
-              <span className="message-data-time"><b>GroupMe</b></span>
+              <span className="message-data-time">Today 11:52 PM &middot; <b>GroupMe</b></span>
             </div>
             <i>Benjamin Mourside Added bot TestBot to Group</i>
           </li>
