@@ -127,6 +127,10 @@ const Conversation = (props: any): JSX.Element => {
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
             </div>
             <div className="message other-message float-end">
+              <div className="text-start mb-2">
+                This is long text that was sent with the image. Perhaps it wraps, perhaps it does not. Point being, it is long and takes up space.
+              </div>
+
               <Card>
                 <Card.Body>
                   <Figure>
@@ -138,10 +142,7 @@ const Conversation = (props: any): JSX.Element => {
                       fluid
                     />
                     <Figure.Caption>
-                      This is long text that was sent with the image. Perhaps it wraps, perhaps it does not. Point being, it is long and takes up space.
-                      <div>
-                        <Badge bg="primary">Meme</Badge>
-                      </div>
+                      <Badge bg="primary">Meme</Badge>
                     </Figure.Caption>
                   </Figure>
                 </Card.Body>
