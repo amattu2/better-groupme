@@ -88,3 +88,8 @@
 .tab-content {
   overflow-y: auto;
 }
+
+.my-message blockquote {
+  border-left: 8px solid;
+  padding: 10px;
+}

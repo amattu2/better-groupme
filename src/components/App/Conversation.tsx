@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../AuthProvider';
 import { useData } from '../DataProvider';
-import { Alert, CloseButton, InputGroup, FormControl, ButtonGroup, Button, Dropdown, DropdownButton, Card, Form } from 'react-bootstrap';
+import { Alert, Badge, CloseButton, InputGroup, FloatingLabel, Col, Figure, FormControl, ButtonGroup, Button, Dropdown, DropdownButton, Card, Form } from 'react-bootstrap';
 import { BsFileBarGraphFill } from "react-icons/bs";
 import "./chat.css";
 
@@ -114,21 +114,34 @@ const Conversation = (props: any): JSX.Element => {
                 </Card.Header>
                 <Card.Body>
                   <Card.Title>What's your favorite color?</Card.Title>
-                  <Form>
-                    <Form.Check type="radio">
-                      <Form.Check.Input type="radio" />
-                      <Form.Check.Label>Label 1</Form.Check.Label>
-                    </Form.Check>
-                    <Form.Check type="radio">
-                      <Form.Check.Input type="radio" />
-                      <Form.Check.Label>Label 2</Form.Check.Label>
-                    </Form.Check>
-                    <Form.Check type="radio">
-                      <Form.Check.Input type="radio" />
-                      <Form.Check.Label>Label 3</Form.Check.Label>
-                    </Form.Check>
-                  </Form>
-                  <Button variant="primary">Go somewhere</Button>
+                    <Form>
+                      <Form.Group className="mb-3">
+                        <Col sm={10}>
+                          <Form.Check
+                            type="radio"
+                            label="first radio"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios1"
+                          />
+                          <Form.Check
+                            type="radio"
+                            label="second radio"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios2"
+                          />
+                          <Form.Check
+                            type="radio"
+                            label="third radio"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                          />
+                        </Col>
+                      </Form.Group>
+                    </Form>
+                  <div className="float-end">
+                    <Button variant="outline-secondary">Results</Button>
+                    <Button variant="primary ms-2">Submit</Button>
+                  </div>
                 </Card.Body>
               </Card>
             </div>
@@ -140,15 +153,55 @@ const Conversation = (props: any): JSX.Element => {
             </div>
             <div className="message my-message float-start">Project has been already finished and I have results to show you.</div>
           </li>
+          <li className="clearfix">
+            <div className="message-data">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+              <span className="message-data-time">10:15 AM, Today</span>
+            </div>
+            <div className="message my-message float-start">
+              <blockquote className="mb-0 text-muted">
+                <p className="mb-0">Here is a long quote <br/> xyz xyz do abc <br/> long quote</p>
+              </blockquote>
+            </div>
+          </li>
+          <li className="clearfix">
+            <div className="message-data text-end">
+              <span className="message-data-time">7:25 PM, Today</span>
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+            </div>
+            <div className="message other-message float-end">
+              <Card>
+                <Card.Body>
+                  <Figure>
+                    <Figure.Image
+                      width={171}
+                      height={180}
+                      alt="171x180"
+                      src="https://via.placeholder.com/171x180"
+                      fluid
+                    />
+                    <Figure.Caption>
+                      This is long text that was sent with the image. Perhaps it wraps, perhaps it does not. Point being, it is long and takes up space.
+                      <div>
+                        <Badge bg="primary">Meme</Badge>
+                      </div>
+                    </Figure.Caption>
+                  </Figure>
+                </Card.Body>
+              </Card>
+            </div>
+          </li>
         </ul>
       </div>
       <div className="position-absolute bottom-0 start-0 end-0 p-2 bg-white d-flex border-top">
         <InputGroup>
-          <FormControl
-            as="textarea"
-            placeholder="Enter your message"
-            rows={1}
-          />
+          <FloatingLabel label="Message" style={{width: "100%"}}>
+            <Form.Control
+              as="textarea"
+              placeholder="Enter your message"
+              style={{height: "55px"}}
+            />
+          </FloatingLabel>
         </InputGroup>
         <div className="align-items-center d-flex justify-content-center">
           <ButtonGroup className="ms-1">
