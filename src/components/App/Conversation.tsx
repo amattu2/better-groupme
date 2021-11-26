@@ -2,7 +2,7 @@
 import React from 'react';
 import { useConversationData } from '../DataProviders/ConversationProvider';
 import { Alert, Badge, CloseButton, InputGroup, FloatingLabel,
-  Col, Figure, ButtonGroup, Button, Dropdown, DropdownButton,
+  Col, Figure, ButtonGroup, Button,
   Card, Form,
   Spinner, Accordion,
 } from 'react-bootstrap';
@@ -222,11 +222,7 @@ const Conversation = (props: any): JSX.Element => {
         </InputGroup>
         <div className="align-items-center d-flex justify-content-center">
           <ButtonGroup className="ms-1">
-            <Button variant="dark">Send</Button>
-            <DropdownButton as={ButtonGroup} title="Attach" variant="dark">
-              <Dropdown.Item eventKey="1">Upload</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Link</Dropdown.Item>
-            </DropdownButton>
+            <Button variant="dark">+</Button>
           </ButtonGroup>
         </div>
       </div>
