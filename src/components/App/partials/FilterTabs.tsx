@@ -1,6 +1,8 @@
 // Imports
 import React from 'react';
 import { ListGroup, Tabs, Tab } from 'react-bootstrap';
+import { ConversationListProvider } from '../../DataProviders/ConversationListProvider';
+import { useAuth } from '../../AuthProvider';
 import ConversationList from './ConversationList';
 import "../style.css";
 
@@ -36,21 +38,29 @@ class ErrorBoundary extends React.Component<any, any> {
  * Conversation list filter pills
  */
 const FilterTabs = (props: any): JSX.Element => {
+  const { accessToken } : any = useAuth();
+
   return (
     <Tabs defaultActiveKey="All">
       <Tab eventKey="All" title="All">
         <ErrorBoundary>
-          <ConversationList filter="all" />
+          <ConversationListProvider token={accessToken} >
+            <ConversationList filter="all"/>
+          </ConversationListProvider>
         </ErrorBoundary>
       </Tab>
       <Tab eventKey="Direct" title="Direct">
         <ErrorBoundary>
-          <ConversationList filter="direct" />
+          <ConversationListProvider token={accessToken} >
+            <ConversationList filter="direct"/>
+          </ConversationListProvider>
         </ErrorBoundary>
       </Tab>
       <Tab eventKey="Groups" title="Groups">
         <ErrorBoundary>
-          <ConversationList filter="groups" />
+          <ConversationListProvider token={accessToken} >
+            <ConversationList filter="groups"/>
+          </ConversationListProvider>
         </ErrorBoundary>
       </Tab>
     </Tabs>

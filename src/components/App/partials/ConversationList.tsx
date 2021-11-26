@@ -1,7 +1,7 @@
 // Imports
 import React from 'react';
-import { useData } from '../../DataProvider';
-import { ListGroup } from 'react-bootstrap';
+import { useConversationListData } from '../../DataProviders/ConversationListProvider';
+import { ListGroup, Spinner } from 'react-bootstrap';
 import ConversationListItem from './ConversationListItem';
 
 /*
@@ -9,8 +9,19 @@ import ConversationListItem from './ConversationListItem';
  */
 const ConversationList = (props: any): JSX.Element => {
   const { filter } : any = props;
-  const { conversations } : any = useData();
-  const filteredConvos = conversations.filter((chatItem : ConversationInfo) => {
+  const data : any = useConversationListData();
+
+  if (data.status === 'LOADING') {
+    return (
+      <ListGroup variant="flush" className="border-bottom scrollarea">
+        <Spinner animation="border" />
+      </ListGroup>
+    );
+  } else if (data.status === 'ERROR') {
+    return <div />;
+  }
+
+  const filteredConvos = data.value.filter((chatItem : ConversationInfo) => {
     if (filter === "groups")
       return chatItem.isGroup;
     if (filter === "direct")

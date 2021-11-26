@@ -31,10 +31,6 @@ interface ConversationMessage {
   isSystem: boolean,
 };
 
-interface DataProviderValue {
-  conversations: Array<ConversationInfo>,
-};
-
 interface Conversation {
   convo: ConversationInfo,
   messages: Array<ConversationMessage>,
@@ -46,7 +42,7 @@ interface ConversationProviderState1 {
 
 interface ConversationProviderState2 {
   status: 'LOADED',
-  value: Conversation
+  value: Array<ConversationMessage>,
 };
 
 type ConversationProviderState = ConversationProviderState2 | ConversationProviderState1;
@@ -54,5 +50,20 @@ type ConversationProviderState = ConversationProviderState2 | ConversationProvid
 interface ConversationProviderProperties {
   id: number,
   type: string,
+  token: string,
+};
+
+interface ConversationListProviderState1 {
+  status: 'LOADING' | 'ERROR'
+};
+
+interface ConversationListProviderState2 {
+  status: 'LOADED',
+  value: Array<ConversationInfo>,
+};
+
+type ConversationListProviderState = ConversationListProviderState2 | ConversationListProviderState1;
+
+interface ConversationListProviderProperties {
   token: string,
 };

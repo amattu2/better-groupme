@@ -1,6 +1,7 @@
 // Imports
 import React from 'react';
 import { useConversationData } from '../DataProviders/ConversationProvider';
+import { useConversationListData } from '../DataProviders/ConversationListProvider';
 import { Alert, Badge, CloseButton, InputGroup, FloatingLabel,
   Col, Figure, ButtonGroup, Button,
   Card, Form,
@@ -13,15 +14,23 @@ import "./style.css";
  * Conversation container
  */
 const Conversation = (props: any): JSX.Element => {
-  const data : any = useConversationData();
+  const { id } : any = props;
+  const conversations : any = useConversationListData();
+  const messages : any = useConversationData();
 
-  if (data.status === 'LOADING') {
+  if (messages.status === 'LOADING' || conversations.status === 'LOADING') {
     return (
       <div className="d-flex justify-content-center align-items-center w-100 bg-light">
         <Spinner animation="border" />
       </div>
     );
-  } else if (data.status === 'ERROR') {
+  } else if (messages.status === 'ERROR' || conversations.status === 'ERROR') {
+    window.location.hash = "#";
+    return <div />;
+  }
+
+  const convo : any = conversations.value.filter((d : any) => d.id === id)[0];
+  if (!convo || !convo.name) {
     window.location.hash = "#";
     return <div />;
   }
@@ -29,12 +38,12 @@ const Conversation = (props: any): JSX.Element => {
   return (
     <div className="d-flex-fill w-100 bg-light position-relative">
       <span className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom bg-white">
-        <span className="fs-5 fw-semibold">{data.value.convo.name}</span>
+        <span className="fs-5 fw-semibold">{convo.name}</span>
         <CloseButton className="ms-auto" onClick={() => window.location.hash = ""} />
       </span>
       <div className="overflow-auto chat-history p-3">
 
-        {data.value.convo.isPublic &&
+        {convo.isPublic &&
           <Alert variant="warning" dismissible>
             <Alert.Heading>Reminder</Alert.Heading>
             <p>This is a public access group, anyone can join with the invite link. Any message you send is visible to past and present group members, and once sent, messages cannot be reliably deleted.</p>
