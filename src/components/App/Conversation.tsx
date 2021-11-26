@@ -4,7 +4,7 @@ import { useConversationData } from '../DataProviders/ConversationProvider';
 import { Alert, Badge, CloseButton, InputGroup, FloatingLabel,
   Col, Figure, ButtonGroup, Button, Dropdown, DropdownButton,
   Card, Form,
-  Spinner
+  Spinner, Accordion,
 } from 'react-bootstrap';
 import { BsFileBarGraphFill } from "react-icons/bs";
 import "./style.css";
@@ -126,7 +126,7 @@ const Conversation = (props: any): JSX.Element => {
               <span className="message-data-time">7:25 PM, Today</span>
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
             </div>
-            <div className="message other-message float-end">
+            <div className="message other-message float-end w-100">
               <div className="text-start mb-2">
                 This is long text that was sent with the image. Perhaps it wraps, perhaps it does not. Point being, it is long and takes up space.
               </div>
@@ -145,6 +145,65 @@ const Conversation = (props: any): JSX.Element => {
                       <Badge bg="primary">Meme</Badge>
                     </Figure.Caption>
                   </Figure>
+                </Card.Body>
+              </Card>
+            </div>
+          </li>
+          <li className="clearfix">
+            <div className="message-data">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+              <span className="message-data-time">11:42 PM, Today</span>
+            </div>
+            <div className="message my-message float-start">Hey <b>@<a>Alan Miller</a></b> can you PM me asap?</div>
+          </li>
+          <li className="clearfix">
+            <div className="message-data">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
+              <span className="message-data-time">11:50 PM, Today</span>
+            </div>
+            <div className="message my-message float-start w-100">
+              <div className="text-start mb-2">
+                This is long text that was sent with the image. Perhaps it wraps, perhaps it does not. Point being, it is long and takes up space.
+              </div>
+
+              <Card>
+                <Card.Body>
+                  <Accordion defaultActiveKey="0">
+                    <Accordion.Item eventKey="0">
+                      <Accordion.Header>Attachment #1</Accordion.Header>
+                      <Accordion.Body>
+                        <Figure>
+                          <Figure.Image
+                            width={171}
+                            height={180}
+                            alt="171x180"
+                            src="https://via.placeholder.com/171x180"
+                            fluid
+                          />
+                          <Figure.Caption>
+                            <Badge bg="primary">Meme</Badge>
+                          </Figure.Caption>
+                        </Figure>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="1">
+                      <Accordion.Header>Attachment #2</Accordion.Header>
+                      <Accordion.Body>
+                        <Figure>
+                          <Figure.Image
+                            width={171}
+                            height={180}
+                            alt="171x180"
+                            src="https://via.placeholder.com/171x180"
+                            fluid
+                          />
+                          <Figure.Caption>
+                            <Badge bg="primary">Meme</Badge>
+                          </Figure.Caption>
+                        </Figure>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
                 </Card.Body>
               </Card>
             </div>
