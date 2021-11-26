@@ -1,6 +1,6 @@
 // Imports
 import React from 'react';
-import Conversation from './Conversation';
+import Conversation from './partials/Conversation';
 import { ConversationProvider } from '../DataProviders/ConversationProvider';
 import { ConversationListProvider } from '../DataProviders/ConversationListProvider';
 import { useAuth } from '../AuthProvider';

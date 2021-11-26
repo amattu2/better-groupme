@@ -1,14 +1,14 @@
 // Imports
 import React from 'react';
-import { useConversationData } from '../DataProviders/ConversationProvider';
-import { useConversationListData } from '../DataProviders/ConversationListProvider';
+import { useConversationData } from '../../DataProviders/ConversationProvider';
+import { useConversationListData } from '../../DataProviders/ConversationListProvider';
 import { Alert, Badge, CloseButton, InputGroup, FloatingLabel,
   Col, Figure, ButtonGroup, Button,
   Card, Form,
   Spinner, Accordion,
 } from 'react-bootstrap';
 import { BsFileBarGraphFill } from "react-icons/bs";
-import "./style.css";
+import "../style.css";
 
 /**
  * Conversation container
