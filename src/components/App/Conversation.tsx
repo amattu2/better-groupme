@@ -115,7 +115,7 @@ const Conversation = (props: any): JSX.Element => {
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
               <span className="message-data-time">10:15 AM, Today</span>
             </div>
-            <div className="message my-message float-start">
+            <div className="message my-message float-start w-100">
               <blockquote className="mb-0 text-muted">
                 <p className="mb-0">Here is a long quote <br/> xyz xyz do abc <br/> long quote</p>
               </blockquote>
