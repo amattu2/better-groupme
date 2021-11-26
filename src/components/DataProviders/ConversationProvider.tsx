@@ -76,7 +76,7 @@ export const ConversationProvider: FC<ConversationProviderProperties> = (props :
         },
       });
     })();
-  }, [id, type, token]);
+  }, [id, type, token, conversations]);
 
   return (
     <Context.Provider value={state}>
