@@ -154,7 +154,14 @@ const Conversation = (props: any): JSX.Element => {
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar" />
               <span className="message-data-time">11:42 PM, Today</span>
             </div>
-            <div className="message my-message float-start">Hey <b>@<a>Alan Miller</a></b> can you PM me asap?</div>
+            <div className="message my-message float-start">
+              Hey
+              <span className="d-inline-flex align-items-center mx-1">
+                <b>@<a href="#/">Alan Miller</a></b>
+                <Badge bg="warning" className="ms-1">YOU</Badge>
+              </span>
+              can you PM me asap?
+            </div>
           </li>
           <li className="clearfix">
             <div className="message-data">
