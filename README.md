@@ -1,6 +1,10 @@
 # Introduction
 If you've ever used the GroupMe web client before, you likely hate it just as much as the rest of us. It's outdated, clunky, and ugly. This ReactJs application is a simplistic, modern replacement for it.
 
+*PS*,
+
+Development is still in progress.
+
 # Usage
 1. Clone repo
 2. Create a GroupMe application [here](https://dev.groupme.com/applications)
