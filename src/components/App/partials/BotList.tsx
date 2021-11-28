@@ -22,7 +22,7 @@ const BotList = (props: any): JSX.Element => {
   return (
     <ListGroup variant="flush" className="border-bottom scrollarea">
       {(data.value || []).map((botItem : BotInfo, index : number) => (
-        <ListGroup.Item key={index} action className="py-3 lh-tight">
+        <ListGroup.Item key={index} href={"#/bots/" + botItem.id} action className="py-3 lh-tight">
           <div className="d-flex w-100 align-items-center justify-content-between">
             <strong className="mb-1">{botItem.name}</strong>
           </div>

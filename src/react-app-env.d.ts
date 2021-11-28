@@ -69,7 +69,11 @@ interface ConversationListProviderProperties {
 };
 
 interface BotInfo {
+  id: string,
   name: string,
+  avatar_url: string | null,
+  callback_url: string,
+  group_id: string,
 }
 
 interface BotListProviderState1 {

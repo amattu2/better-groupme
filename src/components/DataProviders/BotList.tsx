@@ -29,7 +29,11 @@ export const BotListProvider: FC<BotListProviderProperties> = (props : any) => {
       const botsJson = await bots.json();
       (botsJson.response || []).forEach((bot : any) => {
         botList.push({
-          name: bot.name
+          id: bot.bot_id,
+          group_id: bot.group_id,
+          name: bot.name,
+          avatar_url: bot.avatar_url,
+          callback_url: bot.callback_url,
         })
       });
 
