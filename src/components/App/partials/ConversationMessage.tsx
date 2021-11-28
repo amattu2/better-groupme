@@ -10,7 +10,7 @@ const ConversationMessage = (props: any): JSX.Element => {
   const { avatar_url, created_at, name, sender_type,
     favorites, attachments, isSystem, isSelf } : any = props;
   const date = new Date(created_at * 1000);
-  const extraClass = attachments.length > 0 ? " w-100" : "";
+  const extraClass = attachments.filter((a : any) => a.type === "image" || a.type === "poll").length > 0 ? " w-100" : "";
 
   // Find Correct Message Type
   if (!isSelf) {
