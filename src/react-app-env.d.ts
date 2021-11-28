@@ -113,3 +113,31 @@ type UserProfileProviderState = UserProfileProviderState2 | UserProfileProviderS
 interface UserProfileProviderProperties {
   token: string,
 };
+
+interface PollInfo {
+  id: string,
+  created_at: number,
+  expires_at: number,
+  modified_at: number,
+  options: Array<any>,
+  subject: string,
+  type: "multi" | "single",
+  visibility: string,
+};
+
+interface PollProviderState1 {
+  status: 'LOADING' | 'ERROR'
+};
+
+interface PollProviderState2 {
+  status: 'LOADED',
+  value: PollInfo,
+};
+
+type PollProviderState = PollProviderState2 | PollProviderState1;
+
+interface PollProviderProperties {
+  group_id: string,
+  poll_id: string,
+  token: string,
+};

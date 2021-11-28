@@ -23,6 +23,7 @@ Development is still in progress.
 - [ ] User Settings
 - [ ] Message Likes
 - [ ] Message Quotes
+- [ ] Group Poll Submit/Results/Etc
 - [ ] ... all other message types
 
 # Requirements & Dependencies
