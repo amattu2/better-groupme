@@ -42,8 +42,8 @@ const AppWrapper = (props: any): JSX.Element => {
             {/* Container Element */}
             <Routes>
               <Route path='/' element={<ConversationFiller />} />
-              <Route path='/group/:id' element={<ConversationWrapper />} />
-              <Route path='/conversation/:id' element={<ConversationWrapper />} />
+              <Route path='/:type/:id' element={<ConversationWrapper />} />
+              <Route path='/:type/:id' element={<ConversationWrapper />} />
               <Route path='/bots' element={<h3>Bots</h3>} />
               <Route path='/bots/:id' element={<h3>Bot id</h3>} />
               <Route path='/contacts' element={<h3>contacts</h3>} />
