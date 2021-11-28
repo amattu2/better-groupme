@@ -18,10 +18,8 @@ const ConversationMessageContent = (props: any): JSX.Element => {
   }
 
   // Image Attachment(s)
-  if (attachments.length > 0 && !event) {
-    const images = attachments.filter((a : any) => a.type === 'image');
-    console.log(attachments, images);
-
+  const images = attachments.filter((a : any) => a.type === 'image');
+  if (images.length > 0 && !event) {
     return (
       <>
         {text && text.length > 0 &&
@@ -55,8 +53,13 @@ const ConversationMessageContent = (props: any): JSX.Element => {
     );
   }
 
+  const replies = attachments.filter((a : any) => a.type === 'reply');
+  if (replies.length > 0) {
+    console.log("has replies");
+  }
+  
   // Default
-  return <i><b>Oops, I'm unsure how to parse this content. Please report it.</b></i>;
+  return <i><b>[Oops, I'm unsure how to parse this content. Please report it.]</b></i>;
 
     /*
       <li className="clearfix">

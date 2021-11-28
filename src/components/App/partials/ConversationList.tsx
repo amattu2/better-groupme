@@ -21,10 +21,12 @@ const ConversationList = (props: any): JSX.Element => {
   }
 
   const filteredConvos = data.value.filter((chatItem : ConversationInfo) => {
-    if (filter === "groups")
+    if (filter === "groups") {
       return chatItem.isGroup;
-    if (filter === "direct")
+    }
+    if (filter === "direct") {
       return !chatItem.isGroup;
+    }
 
     return true;
   });
