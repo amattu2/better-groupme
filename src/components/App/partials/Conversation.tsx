@@ -46,7 +46,7 @@ const Conversation = (props: any): JSX.Element => {
       </span>
       <div className="overflow-auto chat-history p-3">
         {/* Public Group Alert */}
-        {messages.value.length > 0 && messages.value.length < 10 && convo.isPublic &&
+        {messages.value.length >= 0 && messages.value.length < 10 && convo.isPublic &&
           <Alert variant="warning" dismissible>
             <Alert.Heading>Reminder</Alert.Heading>
             <p>This is a public access group, anyone can join with the invite link. Any message you send is visible to past and present group members, and once sent, messages cannot be reliably deleted.</p>
@@ -54,16 +54,12 @@ const Conversation = (props: any): JSX.Element => {
         }
 
         {/* Conversation Messages */}
-        {
-        messages.value.length > 0 ? (
+        {messages.value.length > 0 &&
           <ul className="m-b-0">
             {(messages.value || []).slice(0).reverse().map((messageItem : ConversationMessage, index : number) => (
               <ConversationMessage key={index} {...messageItem} isSelf={messageItem.sender_id === profile.value.id} />
             ))}
           </ul>
-        ) : (
-          <h1>No messages</h1>
-        )
         }
       </div>
       <div className="position-absolute bottom-0 start-0 end-0 p-2 bg-white d-flex border-top">
