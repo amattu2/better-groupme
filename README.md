@@ -15,5 +15,15 @@ Development is still in progress.
 7. Sign in, and it will return you back to the application with the necessary `access_token`
 8. That's it. Send the app link to your friends, or use the application for your own purpose
 
+# Highlevel To-do
+- [ ] WebSocket implementation
+- [ ] Bot Information Display, Bot Create and Clone
+- [ ] Contacts
+- [ ] Group Archive
+- [ ] User Settings
+- [ ] Message Likes
+- [ ] Message Quotes
+- [ ] ... all other message types
+
 # Requirements & Dependencies
 - [GroupMe API](https://dev.groupme.com/)
