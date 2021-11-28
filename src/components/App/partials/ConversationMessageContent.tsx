@@ -33,7 +33,7 @@ const ConversationMessageContent = (props: any): JSX.Element => {
             <Accordion defaultActiveKey="0">
               {images.map((a : any, index : number) => {
                 return (
-                  <Accordion.Item eventKey={index.toString()}>
+                  <Accordion.Item key={index} eventKey={index.toString()}>
                     <Accordion.Header>Image #{index+1}</Accordion.Header>
                     <Accordion.Body>
                       <Figure>
@@ -57,7 +57,7 @@ const ConversationMessageContent = (props: any): JSX.Element => {
   if (replies.length > 0) {
     console.log("has replies");
   }
-  
+
   // Default
   return <i><b>[Oops, I'm unsure how to parse this content. Please report it.]</b></i>;
 
