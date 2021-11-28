@@ -23,7 +23,7 @@ const ConversationMessage = (props: any): JSX.Element => {
           </span>
           {sender_type !== "system" && <img src={avatar_url ? avatar_url : "https://via.placeholder.com/40x40"} alt="avatar" />}
         </div>
-        <div className="message other-message float-end w-100">
+        <div className={"message other-message float-end text-start" + extraClass}>
           <ConversationMessageContent {...props} />
         </div>
       </li>
@@ -37,7 +37,7 @@ const ConversationMessage = (props: any): JSX.Element => {
         <img src={avatar_url ? avatar_url : "https://via.placeholder.com/40x40"} alt="avatar" />
         <span className="message-data-time me-1">{date.toISOString().split('T')[0]} at TBD</span>
       </div>
-      <div className="message my-message float-start w-100">
+      <div className={"message my-message float-start" + extraClass}>
         <ConversationMessageContent {...props} />
       </div>
     </li>
