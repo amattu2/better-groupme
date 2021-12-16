@@ -24,6 +24,9 @@ export const Poll = (props: any): JSX.Element => {
     );
   }
 
+  const expired = new Date(data.value.expires_at * 1000);
+  const isExpired = expired <= new Date();
+
   return (
     <Card>
       <Card.Header as="h6" className="d-flex align-items-center">
@@ -38,10 +41,12 @@ export const Poll = (props: any): JSX.Element => {
                 {data.value.options.map((opt : any, index : number) => {
                   return (
                     <Form.Check
+                      key={index}
                       type={data.value.type === "single" ? "radio" : "checkbox"}
                       label={opt.title}
                       name={"poll-" + data.value.id + "-opt"}
                       id={"poll-" + data.value.id + "-" + index}
+                      disabled={isExpired}
                     />
                   );
                 })}
@@ -50,7 +55,7 @@ export const Poll = (props: any): JSX.Element => {
           </Form>
         <div className="float-end">
           <Button variant="outline-secondary">Results</Button>
-          <Button variant="primary ms-2">Submit</Button>
+          <Button variant="primary ms-2" disabled={isExpired}>Submit</Button>
         </div>
       </Card.Body>
     </Card>
