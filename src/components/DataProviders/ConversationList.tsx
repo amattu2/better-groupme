@@ -25,7 +25,7 @@ export const ConversationListProvider: FC<ConversationListProviderProperties> = 
       let messages : Array<ConversationInfo> = [];
 
       // Fetch Groups Data
-      const groups = await fetch(`https://api.groupme.com/v3/groups?access_token=${token}&omit=memberships&per_page=2`);
+      const groups = await fetch(`https://api.groupme.com/v3/groups?access_token=${token}&omit=memberships`);
       const groupsJson = await groups.json();
       (groupsJson.response || []).forEach((group : any) => {
         messages.push({
@@ -42,7 +42,7 @@ export const ConversationListProvider: FC<ConversationListProviderProperties> = 
       });
 
       // Fetch Chats (DMs) Data
-      const chats = await fetch(`https://api.groupme.com/v3/chats?access_token=${token}&per_page=2`);
+      const chats = await fetch(`https://api.groupme.com/v3/chats?access_token=${token}`);
       const chatsJson = await chats.json();
       (chatsJson.response || []).forEach((chat : any) => {
         messages.push({
