@@ -57,7 +57,7 @@ const Conversation = (props: any): JSX.Element => {
         {messages.value.length > 0 &&
           <ul className="m-b-0">
             {(messages.value || []).slice(0).reverse().map((messageItem : ConversationMessage, index : number) => (
-              <ConversationMessage key={index} {...messageItem} isSelf={messageItem.sender_id === profile.value.id} />
+              <ConversationMessage key={index} {...messageItem} isSelf={messageItem.sender_id === profile.value.id} isLast={index === messages.value.length-1} />
             ))}
           </ul>
         }
