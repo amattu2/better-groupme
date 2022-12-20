@@ -2,7 +2,7 @@
 
 // Imports
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from '../AuthProvider';
 import AppWrapper from './AppWrapper';
 
@@ -11,11 +11,11 @@ import AppWrapper from './AppWrapper';
  */
 const App = (props: any) : JSX.Element => {
   return (
-    <HashRouter basename="/">
+    <Router basename="/">
       <AuthProvider>
         <AppWrapper />
       </AuthProvider>
-    </HashRouter>
+    </Router>
   );
 };
 
