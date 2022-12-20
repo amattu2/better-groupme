@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Dotenv from 'dotenv';
 import App from './components/App';
 
-// Initialize Config
 Dotenv.config();
 
 ReactDOM.render(

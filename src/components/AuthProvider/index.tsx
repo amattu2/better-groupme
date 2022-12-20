@@ -35,6 +35,7 @@ export const AuthProvider = (props: any) => {
    *
    * @type {String}
    */
+  // eslint-disable-next-line no-sparse-arrays
   const accessToken : string = (document.cookie.match(/^(?:.*;)?\s*access_token\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1] || "";
 
   // Return
