@@ -33,11 +33,6 @@ const Conversation = (props: any): JSX.Element => {
     return <div />;
   }
 
-  console.log("----- LOADED CONVO DEBUG INFO ------");
-  console.log(convo);
-  console.log(profile);
-  console.log(messages);
-
   return (
     <div className="d-flex-fill w-100 bg-light position-relative">
       <span className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom bg-white">
