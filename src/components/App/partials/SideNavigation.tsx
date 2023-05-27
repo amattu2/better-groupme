@@ -17,12 +17,12 @@ const SideNavigation = (props: any): JSX.Element => {
         <Nav.Link href="#/" className="border-bottom" style={{borderRadius: 0}}>
           <BsFillChatRightTextFill />
         </Nav.Link>
-        <Nav.Link href="#/contacts" className="border-bottom" title="Contacts" style={{borderRadius: 0}}>
+        {/* <Nav.Link href="#/contacts" className="border-bottom" title="Contacts" style={{borderRadius: 0}}>
           <BsPeopleFill />
         </Nav.Link>
         <Nav.Link href="#/archive" className="border-bottom" title="Group Archive" style={{borderRadius: 0}}>
           <BsFillArchiveFill />
-        </Nav.Link>
+        </Nav.Link> */}
         <Nav.Link href="#/bots" className="border-bottom" title="My Bots" style={{borderRadius: 0}}>
           <AiFillRobot />
         </Nav.Link>
