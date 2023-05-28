@@ -26,12 +26,11 @@ import { UserProfileProvider } from '../components/Contexts/UserProfile';
 import { ConversationListProvider } from '../components/Contexts/ConversationList'
 import { BotListProvider } from '../components/Contexts/BotList'
 import ConversationWrapper from './ConversationWrapper';
-import ConversationFiller from './ConversationFiller';
 import SideNavigation from '../components/SideNavigation'
 import SideConversations from '../components/SideConversations';
 import SideBots from '../components/SideBots'
 import SidebarFiller from './SidebarFiller';
-import GenericFiller from './GenericFiller';
+import GenericFiller from '../components/GenericFiller';
 
 /**
  * Application container component
@@ -62,10 +61,10 @@ const AppWrapper = (props: any): JSX.Element => {
 
             {/* Container Element */}
             <Routes>
-              <Route path='/' element={<ConversationFiller />} />
+              <Route path='/' element={<GenericFiller placeholder='Select a conversation' />} />
               <Route path='/:type/:id' element={<ConversationWrapper />} />
               <Route path='/:type/:id' element={<ConversationWrapper />} />
-              <Route path='/bots' element={<GenericFiller />} />
+              <Route path='/bots' element={<GenericFiller placeholder='Select a bot' />} />
               <Route path='/bots/:id' element={<h3>Bot id</h3>} />
               {/* <Route path='/contacts' element={<h3>contacts</h3>} /> */}
               {/* <Route path='/archive/' element={<h3>archive</h3>} /> */}
