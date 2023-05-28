@@ -21,15 +21,15 @@
  */
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useAuth } from '../AuthProvider';
-import { UserProfileProvider } from '../DataProviders/UserProfile';
-import { ConversationListProvider } from '../DataProviders/ConversationList';
-import { BotListProvider } from '../DataProviders/BotList';
+import { useAuth } from '../components/Contexts/AuthProvider'
+import { UserProfileProvider } from '../components/Contexts/UserProfile';
+import { ConversationListProvider } from '../components/Contexts/ConversationList'
+import { BotListProvider } from '../components/Contexts/BotList'
 import ConversationWrapper from './ConversationWrapper';
 import ConversationFiller from './ConversationFiller';
-import SideNavigation from './partials/SideNavigation';
-import SideConversations from './partials/SideConversations';
-import SideBots from './partials/SideBots'
+import SideNavigation from '../components/SideNavigation'
+import SideConversations from '../components/SideConversations';
+import SideBots from '../components/SideBots'
 import SidebarFiller from './SidebarFiller';
 import GenericFiller from './GenericFiller';
 

@@ -3,7 +3,6 @@ import React from 'react';
 import { ListGroup, Tabs, Tab, Button } from 'react-bootstrap';
 import { BsBookmarkPlus } from 'react-icons/bs';
 import ConversationList from './ConversationList';
-import "../style.css";
 
 /**
  * Error boundary for ConversationList

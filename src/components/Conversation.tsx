@@ -1,11 +1,10 @@
 // Imports
 import React from 'react';
-import ConversationMessage from './ConversationMessage';
-import { useConversationData } from '../../DataProviders/Conversation';
-import { useConversationListData } from '../../DataProviders/ConversationList';
-import { useProfileData } from '../../DataProviders/UserProfile';
 import { Alert, CloseButton, InputGroup, FloatingLabel, ButtonGroup, Button, Form, Spinner } from 'react-bootstrap';
-import "../style.css";
+import ConversationMessage from './ConversationMessage';
+import { useConversationData } from './Contexts/Conversation';
+import { useConversationListData } from './Contexts/ConversationList';
+import { useProfileData } from './Contexts/UserProfile';
 
 /**
  * Conversation container

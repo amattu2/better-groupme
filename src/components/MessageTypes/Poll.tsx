@@ -2,7 +2,7 @@
 import React from 'react';
 import { Spinner, Card, Col, Button, Form } from 'react-bootstrap';
 import { BsFileBarGraphFill } from 'react-icons/bs';
-import { usePollData } from '../../../DataProviders/Poll';
+import { usePollData } from '../Contexts/Poll';
 
 /**
  *

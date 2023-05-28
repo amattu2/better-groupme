@@ -20,8 +20,9 @@
  */
 import React from "react";
 import { HashRouter as Router } from "react-router-dom";
-import { AuthProvider } from "../AuthProvider";
+import { AuthProvider } from "../components/Contexts/AuthProvider";
 import AppWrapper from "./AppWrapper";
+import "../css/style.css";
 
 /**
  * Main React App

@@ -1,9 +1,9 @@
 // Imports
 import React from 'react';
-import Conversation from './partials/Conversation';
-import { ConversationProvider } from '../DataProviders/Conversation';
-import { useAuth } from '../AuthProvider';
 import { useParams } from 'react-router-dom';
+import Conversation from '../components/Conversation';
+import { ConversationProvider } from '../components/Contexts/Conversation';
+import { useAuth } from '../components/Contexts/AuthProvider';
 
 /**
  * Error boundary for Conversation List

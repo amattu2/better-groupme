@@ -1,6 +1,6 @@
 // Imports
 import React from 'react';
-import { useConversationListData } from '../../DataProviders/ConversationList';
+import { useConversationListData } from './Contexts/ConversationList';
 import { ListGroup, Spinner } from 'react-bootstrap';
 
 /*

@@ -21,7 +21,6 @@
 
 import React, { useEffect } from "react";
 import ConversationMessageContent from "./ConversationMessageContent";
-import "../style.css";
 
 /**
  * Conversation message container

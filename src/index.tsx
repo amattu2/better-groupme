@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Dotenv from 'dotenv';
-import App from './components/App';
+import App from './content';
 
 Dotenv.config();
 

@@ -1,4 +1,3 @@
-// Imports
 import React, { useEffect, useState, FC } from 'react';
 
 const Context = React.createContext<ConversationListProviderState | null>(null);

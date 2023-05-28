@@ -1,8 +1,8 @@
 // Imports
 import React from 'react';
 import { Text, Images, Reply, Poll } from './MessageTypes';
-import { useAuth } from '../../AuthProvider';
-import { PollProvider } from '../../DataProviders/Poll';
+import { useAuth } from './Contexts/AuthProvider';
+import { PollProvider } from './Contexts/Poll';
 import { useParams } from 'react-router-dom';
 
 /**
