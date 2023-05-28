@@ -31,6 +31,7 @@ import SideConversations from '../components/SideConversations';
 import SideBots from '../components/SideBots'
 import SidebarFiller from './SidebarFiller';
 import GenericFiller from '../components/GenericFiller';
+import Bot from '../components/Bot';
 
 /**
  * Application container component
@@ -63,9 +64,8 @@ const AppWrapper = (props: any): JSX.Element => {
             <Routes>
               <Route path='/' element={<GenericFiller placeholder='Select a conversation' />} />
               <Route path='/:type/:id' element={<ConversationWrapper />} />
-              <Route path='/:type/:id' element={<ConversationWrapper />} />
               <Route path='/bots' element={<GenericFiller placeholder='Select a bot' />} />
-              <Route path='/bots/:id' element={<h3>Bot id</h3>} />
+              <Route path='/bots/:id' element={<Bot />} />
               {/* <Route path='/contacts' element={<h3>contacts</h3>} /> */}
               {/* <Route path='/archive/' element={<h3>archive</h3>} /> */}
               <Route path='/settings/' element={<h3>settings</h3>} />

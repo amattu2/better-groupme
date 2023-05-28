@@ -19,6 +19,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+.generic-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .chat-history {
   height: calc(100% - 135px);
 }

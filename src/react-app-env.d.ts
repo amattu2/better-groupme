@@ -90,13 +90,14 @@ interface ConversationListProviderProperties {
 interface BotInfo {
   id: string,
   name: string,
-  avatar_url: string | null,
+  avatar_url: string,
   callback_url: string,
   group_id: string,
 }
 
 interface BotListProviderState1 {
-  status: 'LOADING' | 'ERROR'
+  status: 'LOADING' | 'ERROR',
+  value?: null,
 };
 
 interface BotListProviderState2 {
