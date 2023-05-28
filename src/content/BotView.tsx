@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Form, Button, ListGroup, Spinner, Card } from 'react-bootstrap';
-import { useBotListData } from './Contexts/BotList';
+import { useBotListData } from '../components/Contexts/BotList';
 
 /*
  * Generates a Bot Edit View

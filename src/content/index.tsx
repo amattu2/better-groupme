@@ -19,9 +19,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from "react";
-import { HashRouter as Router } from "react-router-dom";
+import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import { AuthProvider } from "../components/Contexts/AuthProvider";
-import AppWrapper from "./AppWrapper";
+import BotView from "./BotView";
+import { BotListProvider } from "../components/Contexts/BotList";
+import { ConversationListProvider } from "../components/Contexts/ConversationList";
+import { UserProfileProvider } from "../components/Contexts/UserProfile";
+import GenericFiller from "../components/GenericFiller";
+import Sidebar from "../components/Sidebar";
+import ConversationWrapper from "./ConversationWrapper";
 import "../css/style.css";
 
 /**
@@ -31,7 +37,29 @@ const App = (props: any): JSX.Element => {
   return (
     <Router basename="/">
       <AuthProvider>
-        <AppWrapper />
+        <UserProfileProvider>
+          <ConversationListProvider>
+            <BotListProvider>
+              {/* Main Container */}
+              <div className="d-flex h-100">
+
+                {/* Navigation */}
+                <Sidebar />
+
+                {/* Container Element */}
+                <Routes>
+                  <Route path='/' element={<GenericFiller placeholder='Select a conversation' />} />
+                  <Route path='/:type/:id' element={<ConversationWrapper />} />
+                  <Route path='/bots' element={<GenericFiller placeholder='Select a bot' />} />
+                  <Route path='/bots/:id' element={<BotView />} />
+                  {/* <Route path='/contacts' element={<h3>contacts</h3>} /> */}
+                  {/* <Route path='/archive/' element={<h3>archive</h3>} /> */}
+                  <Route path='/settings' element={<h3>settings</h3>} />
+                </Routes>
+              </div>
+            </BotListProvider>
+          </ConversationListProvider>
+        </UserProfileProvider>
       </AuthProvider>
     </Router>
   );

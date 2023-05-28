@@ -1,4 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
+import { useAuth } from './AuthProvider';
 
 const Context = React.createContext<ConversationListProviderState | null>(null);
 
@@ -12,8 +13,8 @@ export const useConversationListData = (): ConversationListProviderState => {
   return contextState;
 };
 
-export const ConversationListProvider: FC<ConversationListProviderProperties> = (props : any) => {
-  const { token } = props;
+export const ConversationListProvider: FC<any> = (props : any) => {
+  const { accessToken } = useAuth();
   const [state, setState] = useState<ConversationListProviderState>({status: 'LOADING'});
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export const ConversationListProvider: FC<ConversationListProviderProperties> = 
       let messages : Array<ConversationInfo> = [];
 
       // Fetch Groups Data
-      const groups = await fetch(`https://api.groupme.com/v3/groups?access_token=${token}&omit=memberships`);
+      const groups = await fetch(`https://api.groupme.com/v3/groups?access_token=${accessToken}&omit=memberships`);
       const groupsJson = await groups.json();
       (groupsJson.response || []).forEach((group : any) => {
         messages.push({
@@ -41,7 +42,7 @@ export const ConversationListProvider: FC<ConversationListProviderProperties> = 
       });
 
       // Fetch Chats (DMs) Data
-      const chats = await fetch(`https://api.groupme.com/v3/chats?access_token=${token}`);
+      const chats = await fetch(`https://api.groupme.com/v3/chats?access_token=${accessToken}`);
       const chatsJson = await chats.json();
       (chatsJson.response || []).forEach((chat : any) => {
         messages.push({
@@ -62,7 +63,7 @@ export const ConversationListProvider: FC<ConversationListProviderProperties> = 
         value: messages.sort((a, b) => { return b.preview.message_date.getTime() - a.preview.message_date.getTime(); }),
       });
     })();
-  }, [token]);
+  }, [accessToken]);
 
   return (
     <Context.Provider value={state}>

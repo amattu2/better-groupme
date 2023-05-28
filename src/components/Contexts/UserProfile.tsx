@@ -1,4 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
+import { useAuth } from './AuthProvider';
 
 const Context = React.createContext<UserProfileProviderState | null>(null);
 
@@ -12,15 +13,15 @@ export const useProfileData = (): UserProfileProviderState => {
   return contextState;
 };
 
-export const UserProfileProvider: FC<UserProfileProviderProperties> = (props : any) => {
-  const { token } = props;
+export const UserProfileProvider: FC<any> = (props : any) => {
+  const { accessToken } : AuthProviderState = useAuth();
   const [state, setState] = useState<UserProfileProviderState>({status: 'LOADING'});
 
   useEffect(() => {
     setState({status: 'LOADING'});
 
     (async (): Promise<void> => {
-      const user = await fetch(`https://api.groupme.com/v3/users/me?access_token=${token}`);
+      const user = await fetch(`https://api.groupme.com/v3/users/me?access_token=${accessToken}`);
       if (user.status !== 200) {
         setState({status: "ERROR"});
         return;
@@ -38,7 +39,7 @@ export const UserProfileProvider: FC<UserProfileProviderProperties> = (props : a
         },
       });
     })();
-  }, [token]);
+  }, [accessToken]);
 
   return (
     <Context.Provider value={state}>

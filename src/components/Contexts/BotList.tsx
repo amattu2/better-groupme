@@ -1,4 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
+import { useAuth } from './AuthProvider';
 
 const Context = React.createContext<BotListProviderState | null>(null);
 
@@ -12,8 +13,8 @@ export const useBotListData = (): BotListProviderState => {
   return contextState;
 };
 
-export const BotListProvider: FC<BotListProviderProperties> = (props : any) => {
-  const { token } = props;
+export const BotListProvider: FC<any> = (props : any) => {
+  const { accessToken } = useAuth();
   const [state, setState] = useState<BotListProviderState>({status: 'LOADING'});
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export const BotListProvider: FC<BotListProviderProperties> = (props : any) => {
       let botList : Array<BotInfo> = [];
 
       // Fetch Groups Data
-      const bots = await fetch(`https://api.groupme.com/v3/bots?access_token=${token}`);
+      const bots = await fetch(`https://api.groupme.com/v3/bots?access_token=${accessToken}`);
       const botsJson = await bots.json();
       (botsJson.response || []).forEach((bot : any) => {
         botList.push({
@@ -41,7 +42,7 @@ export const BotListProvider: FC<BotListProviderProperties> = (props : any) => {
         value: botList,
       });
     })();
-  }, [token]);
+  }, [accessToken]);
 
   return (
     <Context.Provider value={state}>

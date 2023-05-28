@@ -20,7 +20,7 @@
  */
 
 import React, { useEffect } from "react";
-import ConversationMessageContent from "./ConversationMessageContent";
+import ConversationMessageContent from "./MessageContent";
 
 /**
  * Conversation message container

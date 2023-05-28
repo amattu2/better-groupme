@@ -1,9 +1,8 @@
 // Imports
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Conversation from '../components/Conversation';
+import Conversation from '../components/Conversation/Conversation';
 import { ConversationProvider } from '../components/Contexts/Conversation';
-import { useAuth } from '../components/Contexts/AuthProvider';
 
 /**
  * Error boundary for Conversation List
@@ -35,11 +34,10 @@ class ErrorBoundary extends React.Component<any, any> {
  * Conversation filler container
  */
 const ConversationWrapper = (props: any): JSX.Element => {
-  const { accessToken } : any = useAuth();
   const { type, id } : any = useParams();
 
   return (
-    <ConversationProvider id={id} type={type} token={accessToken} >
+    <ConversationProvider id={id} type={type}>
       <ErrorBoundary>
         <Conversation id={id} />
       </ErrorBoundary>

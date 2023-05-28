@@ -3,13 +3,19 @@ import React from 'react';
 /**
  * Initialize Auth Context
  */
-const AuthContext = React.createContext<AuthProviderState | undefined>(undefined);
+const AuthContext = React.createContext<AuthProviderState>({accessToken: ""});
 
 /**
  * Allow Access to Auth Context
  */
 export const useAuth = () => {
-  return React.useContext(AuthContext);
+  const context = React.useContext(AuthContext);
+
+  if (context == null) {
+    throw new Error('useAuth must be used within a AuthProvider tag');
+  }
+
+  return context;
 };
 
 /**

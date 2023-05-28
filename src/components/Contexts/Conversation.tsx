@@ -1,4 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
+import { useAuth } from './AuthProvider';
 
 const Context = React.createContext<ConversationProviderState | null>(null);
 
@@ -18,7 +19,8 @@ export const useConversationData = (): ConversationProviderState => {
 };
 
 export const ConversationProvider: FC<ConversationProviderProperties> = (props : any) => {
-  const { id, type, token } = props;
+  const { id, type } = props;
+  const { accessToken } = useAuth();
   const [state, setState] = useState<ConversationProviderState>({status: 'LOADING'});
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export const ConversationProvider: FC<ConversationProviderProperties> = (props :
 
     (async (): Promise<void> => {
       // Fetch Messages
-      const d = await fetch(formatURL(type, id, token));
+      const d = await fetch(formatURL(type, id, accessToken));
       if (!d.ok || d.status !== 200) {
         setState({status: 'ERROR'});
         return;
@@ -62,7 +64,7 @@ export const ConversationProvider: FC<ConversationProviderProperties> = (props :
         value: messages,
       });
     })();
-  }, [id, type, token]);
+  }, [id, type, accessToken]);
 
   return (
     <Context.Provider value={state}>

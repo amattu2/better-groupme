@@ -69,7 +69,6 @@ type ConversationProviderState = ConversationProviderState2 | ConversationProvid
 interface ConversationProviderProperties {
   id: number,
   type: string,
-  token: string,
 };
 
 interface ConversationListProviderState1 {
@@ -82,10 +81,6 @@ interface ConversationListProviderState2 {
 };
 
 type ConversationListProviderState = ConversationListProviderState2 | ConversationListProviderState1;
-
-interface ConversationListProviderProperties {
-  token: string,
-};
 
 interface BotInfo {
   id: string,
@@ -107,10 +102,6 @@ interface BotListProviderState2 {
 
 type BotListProviderState = BotListProviderState2 | BotListProviderState1;
 
-interface BotListProviderProperties {
-  token: string,
-};
-
 interface UserInfo {
   id: string,
   name: string,
@@ -129,10 +120,6 @@ interface UserProfileProviderState2 {
 };
 
 type UserProfileProviderState = UserProfileProviderState2 | UserProfileProviderState1;
-
-interface UserProfileProviderProperties {
-  token: string,
-};
 
 interface PollInfo {
   id: string,
@@ -159,5 +146,4 @@ type PollProviderState = PollProviderState2 | PollProviderState1;
 interface PollProviderProperties {
   group_id: string,
   poll_id: string,
-  token: string,
 };
