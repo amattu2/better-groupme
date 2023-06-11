@@ -2,14 +2,12 @@
 
 If you've ever used the GroupMe web client before, you likely hate it just as much as the rest of us. It's outdated, clunky, and ugly. This ReactJs application is a simplistic, modern replacement for it.
 
-*PS*,
+> *Note*: Development is still in progress.
 
-Development is still in progress. This is a low-fidelity implementation.
-
-# Usage
+# Setup & Usage
 
 1. Clone repo
-2. Create a GroupMe application [here](https://dev.groupme.com/applications)
+2. Create a GroupMe API application [here](https://dev.groupme.com/applications)
 3. Clone the `.env.example` file and rename it to `.env`
 4. Replace `REACT_APP_GM_CLIENT` in the `.env` file with your application key
 5. `npm install && npm start`
@@ -18,7 +16,7 @@ Development is still in progress. This is a low-fidelity implementation.
 8. Sign in, and it will return you back to the application with the necessary `access_token`
 9. That's it. Send the app link to your friends, or use the application for your own purpose
 
-# Highlevel To-do
+# To-do
 
 ## Overall Functionality / Usability
 
@@ -28,7 +26,7 @@ Development is still in progress. This is a low-fidelity implementation.
 
 # Bots
 
-- [ ] Bot Information Display
+- [X] Bot Information Display
 - [ ] Bot Create or Clone
 
 # Contacts
@@ -46,5 +44,5 @@ Development is still in progress. This is a low-fidelity implementation.
 # Requirements & Dependencies
 
 - [GroupMe API](https://dev.groupme.com/)
-- Node.js v16.13.0
-- React.js ~17
+- Node.js v16
+- React.js v17

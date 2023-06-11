@@ -1,41 +1,12 @@
-// Imports
 import React from 'react';
-import { ListGroup, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { BsPatchPlus } from 'react-icons/bs';
 import BotList from './BotList';
 
 /**
- * Error boundary for BotList
- */
-class ErrorBoundary extends React.Component<any, any> {
-  constructor(props : {}) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <ListGroup variant="flush" className="border-bottom scrollarea">
-          <ListGroup.Item action className="py-3 lh-tight">
-            <p className="m-0">An error occurred fetching bots</p>
-          </ListGroup.Item>
-        </ListGroup>
-      );
-    }
-
-    return this.props.children;
-  }
-}
-
-/**
  * Conversation list filter pills
  */
-const SideBots = (props: any): JSX.Element => {
+const SideBots = (): JSX.Element => {
   return (
     <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white border-end" style={{width: "350px", zIndex: 998}}>
       <div className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
@@ -44,9 +15,7 @@ const SideBots = (props: any): JSX.Element => {
           <BsPatchPlus />
         </Button>
       </div>
-      <ErrorBoundary>
-        <BotList />
-      </ErrorBoundary>
+      <BotList />
     </div>
   );
 };
