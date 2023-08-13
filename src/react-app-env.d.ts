@@ -69,6 +69,7 @@ type ConversationProviderState = ConversationProviderState2 | ConversationProvid
 interface ConversationProviderProperties {
   id: number,
   type: string,
+  children: React.ReactNode,
 };
 
 interface ConversationListProviderState1 {
@@ -146,4 +147,5 @@ type PollProviderState = PollProviderState2 | PollProviderState1;
 interface PollProviderProperties {
   group_id: string,
   poll_id: string,
+  children: React.ReactNode,
 };
