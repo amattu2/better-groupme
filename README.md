@@ -9,7 +9,7 @@ If you've ever used the GroupMe web client before, you likely hate it just as mu
 1. Clone repo
 2. Create a GroupMe API application [here](https://dev.groupme.com/applications)
 3. Clone the `.env.example` file and rename it to `.env`
-4. Replace `REACT_APP_GM_CLIENT` in the `.env` file with your application key
+4. Replace `REACT_APP_GM_CLIENT_ID` in the `.env` file with your application key
 5. `npm install && npm start`
 6. Open `http://localhost:3000`
 7. You will be redirected to the GroupMe SSO page

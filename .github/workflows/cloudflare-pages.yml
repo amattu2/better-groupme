@@ -37,7 +37,7 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Build
-        run: npm run build
+        run: REACT_APP_GM_CLIENT_ID=${{ secrets.GM_CLIENT_ID }} npm run build
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1

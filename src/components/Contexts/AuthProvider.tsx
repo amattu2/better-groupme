@@ -46,7 +46,7 @@ export const AuthProvider = (props: any) => {
   if (accessToken) {
     return <AuthContext.Provider value={{accessToken: accessToken}}>{props.children}</AuthContext.Provider>;
   } else {
-    window.location.replace(`https://oauth.groupme.com/oauth/authorize?client_id=${process.env.REACT_APP_GM_CLIENT}`);
+    window.location.replace(`https://oauth.groupme.com/oauth/authorize?client_id=${process.env.REACT_APP_GM_CLIENT_ID}`);
     return null;
   }
 }
