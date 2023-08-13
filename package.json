@@ -28,6 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test --passWithNoTests",
+    "lint:ci": "eslint --ext .js,.jsx,.ts,.tsx src",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
